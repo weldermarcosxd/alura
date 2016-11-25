@@ -1,0 +1,7 @@
+
+public class TestaDeposita {
+	public static void main(String[] args) {
+		Conta conta = new ContaCorrente();
+		conta.deposita(-1000);
+	}
+}

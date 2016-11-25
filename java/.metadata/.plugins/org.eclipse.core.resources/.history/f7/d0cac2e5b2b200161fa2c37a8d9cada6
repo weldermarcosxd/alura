@@ -1,0 +1,11 @@
+
+public class ContaCorrente extends Conta{
+	
+	ContaCorrente contaCorrente = new ContaCorrente();
+	
+	@Override
+	public void atualiza(double valor) {
+		// TODO Auto-generated method stub
+	}
+	
+}

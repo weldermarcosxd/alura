@@ -1,0 +1,8 @@
+public class Quadrado implements AreaCalculavel{
+
+	@Override
+	public double calculaArea() {
+		
+	}
+	
+}

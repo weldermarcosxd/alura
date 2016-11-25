@@ -1,0 +1,9 @@
+public class ContaPrincipal {
+
+	private void mai() {
+
+		Conta conta = new ContaCorrente();
+		
+	}
+	
+}

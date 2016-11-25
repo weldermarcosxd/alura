@@ -1,0 +1,10 @@
+
+public class Retangulo implements AreaCalculavel{
+
+	@Override
+	public double calculaArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

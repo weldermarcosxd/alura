@@ -1,0 +1,18 @@
+public class ContaCorrente extends Conta implements Tributavel{
+	
+	@Override
+	public void atualiza(double valor) {
+		// TODO Auto-generated method stub
+	}
+	
+	public void deposita(double valor) throws IllegalArgumentException {
+		double saldo = getSaldo();
+		setSaldo(saldo += valor);
+	}
+
+	@Override
+	public double calculaTributos() {
+		return this.getSaldo() * 0.01;
+	}
+	
+}

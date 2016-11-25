@@ -1,0 +1,9 @@
+public class ContaPrincipal {
+
+	private void main() {
+
+		Conta conta = new ContaCorrente();
+		
+	}
+	
+}

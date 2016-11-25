@@ -1,0 +1,20 @@
+
+public class Conta {
+	private double saldo;
+
+	public void saca(double valor) {
+		this.valor -= valor;
+	}
+
+	public void atualiza(double valor) {
+		this.valor = (valor * this.valor);
+	}
+
+	public double getValor() {
+		return saldo;
+	}
+
+	public void setValor(double valor) {
+		this.saldo = valor;
+	}
+}

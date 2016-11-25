@@ -1,0 +1,20 @@
+public class ContaCorrente extends Conta implements Tributavel{
+	
+	ContaCorrente contaCorrente = new ContaCorrente();
+	
+	@Override
+	public void atualiza(double valor) {
+		// TODO Auto-generated method stub
+	}
+	
+	public void deposita(double valor) {
+		double saldo = getSaldo();
+		setSaldo(saldo += valor);
+	}
+
+	@Override
+	public double calculaTributos() {
+		return this.getSaldo() * 0.01;
+	}
+	
+}

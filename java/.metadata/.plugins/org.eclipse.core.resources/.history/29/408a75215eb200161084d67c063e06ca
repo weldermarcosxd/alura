@@ -1,0 +1,6 @@
+
+public class ContaCorrente extends Conta{
+	
+	new ContaCorrente();
+	
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480002194054_1" label="JavaJunior" name="JavaJunior">
+<item elementID="=Banco" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Interfaces" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Exceptions" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480000520661_0" label="Window Working Set" name="Aggregate for window 1480000520660"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480002233691_2" label="Window Working Set" name="Aggregate for window 1480002233691"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480018279042_4" label="Window Working Set" name="Aggregate for window 1480018279042"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480019791721_4" label="Window Working Set" name="Aggregate for window 1480019791721"/>
+<mruList name="JavaJunior"/>
+</workingSetManager>

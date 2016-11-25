@@ -1,0 +1,8 @@
+public class Circulo implements AreaCalculavel{
+	private static double pi = 3.14;
+
+	@Override
+	public double calculaArea() {
+		return pi * raio;
+	}
+}
