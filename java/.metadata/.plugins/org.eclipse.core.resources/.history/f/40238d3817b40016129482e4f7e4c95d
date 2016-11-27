@@ -1,0 +1,10 @@
+package br.com.empresa.leitor;
+
+import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+
+public class TesteImportador {
+	public static void main(String[] args) throws UnsupportedEncodingException, ParseException { {
+		
+	}
+}

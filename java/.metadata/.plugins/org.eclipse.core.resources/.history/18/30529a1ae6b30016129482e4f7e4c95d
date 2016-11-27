@@ -1,0 +1,7 @@
+package br.com.empresa.collectionsrelations;
+
+public class TestaCurso {
+	public static void main(String[] args) {
+		new Curso("Trabalhando com coleções no java", "Paulo do Alura");
+	}
+}

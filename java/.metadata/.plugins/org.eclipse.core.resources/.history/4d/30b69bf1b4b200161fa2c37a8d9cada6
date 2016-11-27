@@ -1,6 +1,0 @@
-
-public class TestaGerenciadorDeImpostoDeRenda {
-	public static void main(String[] args) {
-		GerenciadorDeImpostoDeRenda gerenciador = new GerenciadorDeImpostoDeRenda();
-	}
-}

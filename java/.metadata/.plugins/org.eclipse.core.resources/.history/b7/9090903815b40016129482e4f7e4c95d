@@ -1,0 +1,15 @@
+package br.com.empresa;
+
+import java.util.Calendar;
+import br.com.empresa.model.Funcionario;
+import br.com.empresa.model.Gasto;
+
+public class Principal {
+	public static void main(String[] args) {
+		Funcionario funcionario = new Funcionario("Jose", 23, new GregorianCalendar(1993, 12, 15));
+		System.out.println(funcionario);
+		
+		Gasto gasto = new Gasto("Comida", 45, gasto, Calendar.getInstance());
+		System.out.println();
+	}
+}

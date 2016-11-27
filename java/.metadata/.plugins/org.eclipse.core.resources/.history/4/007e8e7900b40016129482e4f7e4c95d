@@ -1,0 +1,49 @@
+package br.com.empresa.modelset;
+
+public class Aluno {
+	private String nome;
+	private int matricula;
+
+	public Aluno(String nome, int matricula) {
+		if(nome == null){
+			throw NullPointerException;
+		}
+		this.nome = nome;
+		this.matricula = matricula;
+	}
+
+	@Override
+	public String toString() {
+		return "Nome: " + this.nome + "Matrícula: " + this.matricula;
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.nome.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Aluno){
+			Aluno aluno = (Aluno) obj;
+			return this.nome.equals(aluno.nome);
+		}
+		return false;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(int matricula) {
+		this.matricula = matricula;
+	}
+}

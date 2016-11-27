@@ -1,0 +1,11 @@
+package br.com.empresa.modelset;
+
+public class Aluno {
+	private String nome;
+	private int matricula;
+	
+	@Override
+	public String toString() {
+		return "Nome: " + this.nome + "Matrícula: " + this.matricula;
+	}
+}

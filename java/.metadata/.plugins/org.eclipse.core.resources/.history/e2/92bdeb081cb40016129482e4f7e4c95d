@@ -1,0 +1,59 @@
+package br.com.empresa.model;
+
+import java.util.Calendar;
+
+public class Gasto {
+
+	private String nome;
+	private double valor;
+	private Funcionario funcionario;
+	private Calendar data;
+
+	public Gasto(String nome, double valor, Funcionario funcionario,
+			Calendar data) {
+		super();
+		this.nome = nome;
+		this.valor = valor;
+		this.funcionario = funcionario;
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "Gasto [nome=" + nome + ", valor=" + valor + ", funcionario="
+				+ funcionario + ", data=" + data + "]";
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	public Calendar getData() {
+		return data;
+	}
+
+	public void setData(Calendar data) {
+		this.data = data;
+	}
+
+}

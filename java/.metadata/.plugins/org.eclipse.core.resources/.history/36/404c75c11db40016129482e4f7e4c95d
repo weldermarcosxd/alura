@@ -1,0 +1,6 @@
+package br.com.caelum.empresa.dao;
+
+
+public class GastoDAO extends DAO {
+
+}

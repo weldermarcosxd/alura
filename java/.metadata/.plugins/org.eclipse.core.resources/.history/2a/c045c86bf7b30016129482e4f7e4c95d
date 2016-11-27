@@ -1,0 +1,20 @@
+package br.com.empresa.modelset;
+
+import java.util.Random;
+
+import br.com.empresa.collectionsrelations.Curso;
+
+public class TesteMatricula {
+	public static void main(String[] args) {
+		
+		Curso curso = new Curso("Jaguar", "Mauren");
+		
+		curso.matricula(new Aluno("Rafael", new Random().nextInt()));
+		curso.matricula(new Aluno("Welder", new Random().nextInt()));
+		curso.matricula(new Aluno("Joice", new Random().nextInt()));
+		curso.matricula(new Aluno("Leandro", new Random().nextInt()));
+		curso.matricula(new Aluno("Chrystian", new Random().nextInt()));
+		
+		
+	}
+}

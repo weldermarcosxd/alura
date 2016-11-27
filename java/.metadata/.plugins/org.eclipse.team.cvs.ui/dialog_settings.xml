@@ -6,4 +6,8 @@
 		<item value="" key="filterShowModules"/>
 		<item value="0" key="selectedOrderBy"/>
 	</section>
+	<section name="SharingWizard">
+	</section>
+	<section name="NewLocationWizard">
+	</section>
 </section>

@@ -1,0 +1,20 @@
+package br.com.empresa.threads;
+
+public class Programa implements Runnable{
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

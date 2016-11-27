@@ -1,0 +1,22 @@
+package br.com.empresa.modelset;
+
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
+import br.com.empresa.collectionsrelations.Curso;
+
+public class TesteMatricula {
+	public static void main(String[] args) {
+		
+		Curso curso = new Curso("Jaguar", "Mauren");
+		
+		curso.add(new Aluno("Rafael", new Random().nextInt()));
+		alunos.add(new Aluno("Welder", new Random().nextInt()));
+		alunos.add(new Aluno("Joice", new Random().nextInt()));
+		alunos.add(new Aluno("Leandro", new Random().nextInt()));
+		alunos.add(new Aluno("Chrystian", new Random().nextInt()));
+		
+		
+	}
+}

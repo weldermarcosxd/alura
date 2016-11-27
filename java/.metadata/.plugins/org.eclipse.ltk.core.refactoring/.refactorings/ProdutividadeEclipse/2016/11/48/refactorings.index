@@ -1,0 +1,19 @@
+1480191000107	Move compilation unit
+1480191282112	Extract local variable 'gasto'
+1480191297594	Extract local variable 'gasto'
+1480192415725	Extract method 'converteData'
+1480192589390	Rename local variable 'tp'
+1480192600893	Rename local variable 'dt'
+1480192634022	Rename local variable 'vl'
+1480192668677	Rename local variable 'mat'
+1480192679595	Rename local variable 'nome'
+1480194312009	Copy folder
+1480194318320	Delete element
+1480194420007	Delete element
+1480194424078	Delete element
+1480194431378	Delete element
+1480194879180	Extract superclass 'DAO'
+1480199846962	Infer generic type arguments
+1480199856674	Infer generic type arguments
+1480199869710	Infer generic type arguments
+1480201642539	Extract local variable 'funcionario'

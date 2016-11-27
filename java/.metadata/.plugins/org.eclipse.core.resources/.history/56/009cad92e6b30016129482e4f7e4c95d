@@ -1,0 +1,16 @@
+package br.com.empresa.collectionsrelations;
+
+import br.com.empresa.objects.Aula;
+
+public class TestaCurso {
+	public static void main(String[] args) {
+		Curso curso = new Curso("Trabalhando com coleções no java", "Paulo do Alura");
+		System.out.println(curso.getAulas());
+		
+		curso.getAulas().add(new Aula("Aula 1: Arrays", 21));
+		curso.getAulas().add(new Aula("Aula 1: Arrays", 20));
+		curso.getAulas().add(new Aula("Aula 1: Arrays", 19));
+		curso.getAulas().add(new Aula("Aula 1: Arrays", 24));
+		curso.getAulas().add(new Aula("Aula 1: Arrays", 15));
+	}
+}

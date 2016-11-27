@@ -1,0 +1,8 @@
+package br.com.empresa.iterators;
+
+import java.util.Comparator;
+
+
+public class OrdenaPorIdade implements Comparator<Funcionario>{
+    // metodo compare
+}

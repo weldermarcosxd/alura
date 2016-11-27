@@ -1,0 +1,13 @@
+package br.com.empresa.objects;
+
+public class Aula {
+	private String nome;
+	private int duracao;
+	
+	public Aula(String nome, int duracao) {
+		this.nome = nome;
+		this.duracao = duracao;
+	}
+	
+	
+}
