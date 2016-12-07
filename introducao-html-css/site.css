@@ -1,18 +1,68 @@
-html{
-    font-family: "Crimson Text","Times New Roman", serif;
+html {
+    font-family: "Crimson Text", "Times New Roman", serif;
     background-color: #F2FFFC;
+    line-height: 1.2;
+    text-align: justify;
 }
 
-h1, h2{
-    font-family: "Open Sans Condensed","Arial", sans-serif;
+h1, h2 {
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
-h1{
+main h1 {
     color: #FFF;
+    padding: 25px;
     text-align: center;
     background-color: #851944;
+    margin: 0;
+    border-bottom: 10px solid #000;
 }
 
-p{
+blockquote {
+    padding: 20px;
+    margin: 0;
+    border: 10px solid #C2CCCA;
+    border-bottom-color: #333;
+  border-right-color: #FFF;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    padding: 20px;
+}
+
+footer {
+    background-color: #000;
+    color: #F2FFFC;
+    padding: 20px;
+}
+
+nav a {
+    color: #F2FFFC;
+    text-decoration: none;
+}
+
+main a {
+    color: #851944;
+}
+
+aside{
+    text-align: center;
+}
+
+aside a {
+    color: inherit;
+    font-family: "Open Sans Condensed", sans-serif;
+}
+
+p {
     text-align: justify
+}
+
+.text-body{
+    width: 720px;
+    margin: auto;
 }
