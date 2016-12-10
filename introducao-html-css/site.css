@@ -9,12 +9,13 @@ h1, h2 {
     font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
-h1{
+h1 {
     font-size: 60px;
 }
 
-h2{
+h2 {
     font-size: 30px;
+    clear: both;
 }
 
 main h1 {
@@ -24,16 +25,20 @@ main h1 {
     background-color: #851944;
     margin: 0;
     border-bottom: 10px solid #000;
+    text-transform: uppercase;
 }
 
 blockquote {
     padding: 20px;
     margin: 20px 40px;
     border: 10px solid #C2CCCA;
-    border-bottom-color: #333;
-    border-right-color: #FFF;
     width: 250px;
     box-sizing: border-box;
+}
+
+cite {
+    font-style: italic;
+    float: right;
 }
 
 aside nav {
@@ -46,19 +51,26 @@ footer {
     background-color: #000;
     color: #F2FFFC;
     padding: 20px;
+    clear: both;
 }
 
 nav a {
     color: #F2FFFC;
     text-decoration: none;
+    text-transform: lowercase;
 }
 
 main a {
     color: #851944;
 }
 
-aside{
+aside, img {
     text-align: center;
+    float: right;
+    box-sizing: border-box;
+    border-left: 10px #000 solid;
+    border-bottom: 10px #000 solid;
+    width: 20%;
 }
 
 aside h1 {
@@ -80,12 +92,70 @@ strong em {
     font-style: italic;
 }
 
-.text-body{
+article {
+    margin: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+article a {
+    font-size: 20px;
+    color: #440099;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    display: block;
+}
+
+article footer {
+    background-color: inherit;
+}
+
+article footer a {
+    text-decoration: none;
+    color: #1122AA;
+    display: inline;
+}
+
+main{
+    float: left;
+    width: 80%;
+}
+
+.text-body {
     width: 720px;
     margin: auto;
     padding: 30px;
 }
 
-.social-media{
+.social-media a {
+    width: 40px;
+    height: 40px;
     display: inline-block;
+    font-size: 0px;
+}
+
+.github {
+    background-image: url('img/github.png');
+}
+
+.twitter {
+    background-image: url('img/twitter.png');
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.linkedin {
+    background-image: url('img/linkedin.png');
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.fiat{
+    float: right;
+}
+
+.petrobras{
+    float: left;
 }
