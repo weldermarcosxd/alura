@@ -52,6 +52,9 @@ footer {
     color: #F2FFFC;
     padding: 20px;
     clear: both;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
 
 nav a {
@@ -70,12 +73,17 @@ aside, img {
     box-sizing: border-box;
     border-left: 10px #000 solid;
     border-bottom: 10px #000 solid;
+}
+
+aside{
     width: 20%;
+    position: relative;
+    top: 300px;
 }
 
 aside h1 {
     font-size: 30px;
-    padding: 25px;
+    padding: 10px;
 }
 
 aside a {
@@ -119,6 +127,7 @@ article footer a {
 main{
     float: left;
     width: 80%;
+    padding-bottom: 100px;
 }
 
 .text-body {
@@ -158,4 +167,10 @@ main{
 
 .petrobras{
     float: left;
+}
+
+.image-joao{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
