@@ -1,9 +1,0 @@
-package br.com.empresa;
-
-import java.util.Calendar;
-
-public class Funcionario {
-	private String nome;
-	private int idade;
-	private Calendar dataNascimento;
-}

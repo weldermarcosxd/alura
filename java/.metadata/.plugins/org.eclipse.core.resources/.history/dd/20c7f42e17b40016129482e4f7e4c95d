@@ -1,7 +1,0 @@
-package br.com.empresa.leitor;
-
-public class TesteImportador {
-	public static void main(String[] args) {
-		
-	}
-}

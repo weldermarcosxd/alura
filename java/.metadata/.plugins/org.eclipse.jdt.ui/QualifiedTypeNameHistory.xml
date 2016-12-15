@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="Quadrado"/>
 <fullyQualifiedTypeName name="Retangulo"/>
 <fullyQualifiedTypeName name="java.lang.Enum"/>
 <fullyQualifiedTypeName name="AreaCalculavel"/>
@@ -8,12 +7,9 @@
 <fullyQualifiedTypeName name="Tributavel"/>
 <fullyQualifiedTypeName name="GerenciadorDeImpostoDeRenda"/>
 <fullyQualifiedTypeName name="SeguroDeVida"/>
-<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="Conta"/>
 <fullyQualifiedTypeName name="ContaCorrente"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="br.com.empresa.objects.Aula"/>
 <fullyQualifiedTypeName name="br.com.empresa.collectionsrelations.Curso"/>
@@ -22,7 +18,6 @@
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
 <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
@@ -43,4 +38,26 @@
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.Writer"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="br.com.alura.gerenciador.Empresa"/>
+<fullyQualifiedTypeName name="br.com.alura.gerenciador.dao.EmpresaDAO"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
+<fullyQualifiedTypeName name="br.com.alura.gerenciador.dao.UsuarioDAO"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+<fullyQualifiedTypeName name="br.com.alura.gerenciador.web.Cookies"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="br.com.alura.gerenciador.Usuario"/>
+<fullyQualifiedTypeName name="br.com.alura.gerenciador.web.BuscaEmpresa"/>
+<fullyQualifiedTypeName name="sun.rmi.server.Dispatcher"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="br.com.alura.gerenciador.web.Tarefa"/>
 </qualifiedTypeNameHistroy>

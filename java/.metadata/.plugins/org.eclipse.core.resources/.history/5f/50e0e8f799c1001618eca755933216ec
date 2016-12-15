@@ -1,0 +1,28 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<body>
+	<c:if test="${empty usuarioLogado}">
+		Bem vindo ao nosso gerenciador de empresas!<br/>
+	</c:if>
+	<c:if test="${not empty usuarioLogado}">
+		Bem vindo ${usuarioLogado.email}<br/>
+	</c:if>
+<form action="router" method="post">
+	<input type="hidden" name="class" value="NovaEmpresa"/>
+    Nome: <input type="text" name="nome" /><br />
+    <input type="submit" value="Enviar" />
+</form>
+
+<form action="router" method="post">
+	<input type="hidden" name="class" value="Login"/>
+    Email: <input type="email" name="email" /><br />
+    Senha: <input type="password" name="senha" /><br />
+    <input type="submit" value="Enviar" />
+</form>
+
+<form action="router" method="post">
+	<input type="hidden" name="class" value="Logout"/>
+    <input type="submit" value="Logout" />
+</form>
+</body>
+</html>

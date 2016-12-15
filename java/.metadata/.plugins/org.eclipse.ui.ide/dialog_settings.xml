@@ -12,6 +12,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/server/alura/javaweb/jstl/produtos"/>
 			<item value="/server/alura/java/fj15-erp"/>
 			<item value="/home/welder/Documents/fj15-empresa"/>
 		</list>

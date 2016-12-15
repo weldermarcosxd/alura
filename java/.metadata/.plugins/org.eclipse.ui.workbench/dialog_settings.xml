@@ -1,46 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="workingset_selection_history">
+		<item value="JavaWebJunior"/>
 		<item value="JavaJunior"/>
 	</list>
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="247" key="DIALOG_X_ORIGIN"/>
-		<item value="20" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="398" key="dialogHeight"/>
-		<item value="742" key="dialogWidth"/>
+		<item value="474" key="dialogHeight"/>
+		<item value="844" key="dialogWidth"/>
 		<list key="textEntries">
-			<item value="2"/>
-			<item value="1"/>
-			<item value="3"/>
-			<item value="2"/>
-			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.create.delegate.methods"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.hashcode.equals"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.tostring"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.commands"/>
-			<item value="org.eclipse.ui.commands"/>
-			<item value="org.eclipse.ui.commands"/>
-			<item value="org.eclipse.ui.commands"/>
-			<item value="org.eclipse.ui.commands"/>
 		</list>
 		<list key="textArray">
-			<item value="gcuf"/>
-			<item value="gc"/>
-			<item value="delega"/>
-			<item value="equals"/>
-			<item value="has"/>
-			<item value="ge"/>
-			<item value="tos"/>
-			<item value="to"/>
-			<item value="generate ge"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">

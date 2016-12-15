@@ -1,0 +1,9 @@
+package br.com.alura.gerenciador.web;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns="/router")
+public class Router extends HttpServlet{
+
+}

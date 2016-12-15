@@ -1,9 +1,0 @@
-package br.com.empresa;
-
-import java.util.GregorianCalendar;
-
-public class Principal {
-	public static void main(String[] args) {
-		Funcionario funcionario = new Funcionario("Jose", 23, new GregorianCalendar(1993, 12, 15));
-	}
-}

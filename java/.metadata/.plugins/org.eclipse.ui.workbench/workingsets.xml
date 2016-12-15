@@ -6,7 +6,8 @@
 <item elementID="=ProdutividadeEclipse" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1481533631902_7" label="JavaWebJunior" name="JavaWebJunior">
-<item elementID="=gerenciador" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/gerenciador" type="4"/>
+<item elementID="=produtos" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480000520661_0" label="Window Working Set" name="Aggregate for window 1480000520660"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480002233691_2" label="Window Working Set" name="Aggregate for window 1480002233691"/>
