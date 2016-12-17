@@ -1,0 +1,13 @@
+package br.com.alura.test;
+
+import be.com.alura.persistence.ProdutoDAO;
+import br.com.alura.model.Produto;
+
+public class TestProdutoList {
+	public static void main(String[] args) {
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+
+		Produto produtoInserido = produtoDAO.findList();
+		System.out.println(produtoInserido);
+	}
+}

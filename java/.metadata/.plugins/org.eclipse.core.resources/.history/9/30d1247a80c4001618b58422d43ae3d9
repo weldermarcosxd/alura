@@ -1,0 +1,17 @@
+package be.com.alura.persistence;
+
+import java.util.ArrayList;
+
+import br.com.alura.model.Produto;
+
+public class ProdutoDAO {
+
+	public Produto save (Produto produto){
+		return new Produto();
+	}
+	
+	public List<Produto> findList(){
+		return List<Produto> produtoList = new ArrayList<Produto>();
+	}
+	
+}

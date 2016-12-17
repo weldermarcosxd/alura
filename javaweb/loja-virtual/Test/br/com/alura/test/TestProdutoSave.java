@@ -1,0 +1,17 @@
+package br.com.alura.test;
+
+import java.sql.SQLException;
+
+import be.com.alura.persistence.ProdutoDAO;
+import br.com.alura.model.Produto;
+
+public class TestProdutoSave {
+
+	public static void main(String[] args) throws SQLException {
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+		Produto produto = new Produto("Mesa Amarela", "4 pernas");
+		
+		Produto produtoInserido = produtoDAO.save(produto);
+		System.out.println(produtoInserido);
+	}
+}

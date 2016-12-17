@@ -1,0 +1,30 @@
+package br.com.alura.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.hsqldb.jdbc.JDBCPool;
+
+public class TestConnection {
+	//main test
+	
+	private DataSource dataSource;
+	
+	TestConnection(){
+		JDBCPool jdbcPool = new JDBCPool();
+		jdbcPool.setUrl("jdbc:hsqldb:hsql://localhost/loja-virtual");
+		jdbcPool.setUser("SA");
+		jdbcPool.setPassword("");
+	}
+	
+	
+	public static Connection getConnection() throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/loja-virtual", "SA", "");
+		System.out.println("Connections successfully open");
+		return connection;
+	}
+	
+}

@@ -1,0 +1,7 @@
+1481987478289	Delete element
+1481987498367	Delete element
+1481989253118	Extract method 'getConnection'
+1481989351629	Rename type 'TestaConexao'
+1481990305357	Rename type 'TestUpdate'
+1481992468438	Extract method 'add'
+1482007971633	Encapsulate field 'produtoList'

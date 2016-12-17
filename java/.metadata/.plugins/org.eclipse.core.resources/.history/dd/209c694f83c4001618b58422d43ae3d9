@@ -1,0 +1,38 @@
+package be.com.alura.persistence;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.alura.datasource.Connect;
+import br.com.alura.model.Produto;
+
+public class ProdutoDAO {
+	
+	Connect connect = new Connect();
+
+	public Produto save (Produto produto) throws SQLException{
+		try(Connection connection = connect.getConnection()){
+			connection.setAutoCommit(false);
+			
+			return new Produto();
+		}
+	}
+	
+	public List<Produto> findList(){
+		List<Produto> produtoList = new ArrayList<Produto>();
+		return produtoList;
+	}
+	
+	public Produto findByid(Produto produto){
+		return new Produto();
+	}
+	
+	public Produto update(Produto produto){
+		return new Produto();
+	}
+	
+	public void delete(Produto produto){
+	}
+}

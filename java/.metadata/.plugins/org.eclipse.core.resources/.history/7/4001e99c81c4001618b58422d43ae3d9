@@ -1,0 +1,15 @@
+package br.com.alura.test;
+
+import be.com.alura.persistence.ProdutoDAO;
+import br.com.alura.model.Produto;
+
+public class TestProdutoSave {
+	
+	ProdutoDAO produtoDAO;
+	
+	public static void main(String[] args) {
+		Produto produto = new Produto("Mesa Azul", "4 pernas");
+		
+		
+	}
+}

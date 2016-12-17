@@ -1,0 +1,18 @@
+package be.com.alura.persistence;
+
+import java.util.List;
+
+import br.com.alura.datasource.Connect;
+import br.com.alura.model.Categoria;
+
+public class CategoriaDAO {
+	
+	Connect connect = new Connect();
+	
+	public List<Categoria>findListComProduto(){
+		
+		
+		return categoriaList;
+	}
+
+}

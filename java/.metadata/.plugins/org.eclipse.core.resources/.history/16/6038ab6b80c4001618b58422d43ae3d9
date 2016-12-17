@@ -1,0 +1,11 @@
+package be.com.alura.persistence;
+
+import br.com.alura.model.Produto;
+
+public class ProdutoDAO {
+
+	public Produto save (Produto produto){
+		return new Produto();
+	}
+	
+}

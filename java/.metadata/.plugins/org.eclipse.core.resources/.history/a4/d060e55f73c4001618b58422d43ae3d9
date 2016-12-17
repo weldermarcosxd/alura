@@ -1,0 +1,33 @@
+package br.com.alura.test;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class TestInsert {
+	public static void main(String[] args) throws SQLException {
+		//main test
+		Connection connection = TestConnection.getConnection();
+		
+		String nome = "Notebook"; 
+		String descricao ="Notebook i'5";
+		String sql = "insert into produto (nome, descricao) values (? , ?)";
+		
+
+		Statement statement = connection.createStatement();
+		boolean result = statement.execute();
+		if(!result) {
+			System.out.println("Query successful");
+		}
+
+		ResultSet resultSet = statement.getGeneratedKeys();
+		while (resultSet.next()) {
+			System.out.println(resultSet.getInt("id"));
+		}
+
+		resultSet.close();
+		statement.close();
+		connection.close();
+	}
+}
