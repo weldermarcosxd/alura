@@ -1,0 +1,6 @@
+1482186802055	Rename package 'br.com.alura.fincancas'
+1482187852566	Rename package 'br.com.alura.fincancas.modelo'
+1482187978919	Move compilation unit
+1482187996349	Move compilation unit
+1482188001222	Delete element
+1482194123939	Encapsulate field 'entityManagerFactory'

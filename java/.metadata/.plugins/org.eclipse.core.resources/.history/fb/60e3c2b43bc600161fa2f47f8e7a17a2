@@ -1,0 +1,13 @@
+package br.com.alura.fincancas.modelo;
+
+public class Conta {
+	
+	private Integer id;
+	
+	private String titular;
+	private String numero;
+	private String banco;
+	private String agencia;
+	
+
+}
