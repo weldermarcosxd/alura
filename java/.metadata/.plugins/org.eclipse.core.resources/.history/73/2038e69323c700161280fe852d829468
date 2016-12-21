@@ -1,0 +1,23 @@
+package br.com.alura.test;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import br.com.alura.financas.modelo.Conta;
+import br.com.alura.financas.persistence.jpa.JPABase;
+
+public class TestaMovimentacoesConta {
+	public static void main(String[] args) {
+		
+		EntityManager entityManager = new JPABase().getEntityManagerFactory();
+		TypedQuery<Conta> query = entityManager.createQuery("from Conta join fetch Conta.movimentacoes", Conta.class);
+		
+		
+		List<Conta> resultList = query.getResultList();
+		for (Conta conta : resultList) {
+			System.out.println(conta.getMovimentacoes().size());
+		}
+	}
+}

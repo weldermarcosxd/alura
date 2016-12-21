@@ -10,44 +10,22 @@
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="450" key="dialogHeight"/>
-		<item value="820" key="dialogWidth"/>
+		<item value="474" key="dialogHeight"/>
+		<item value="844" key="dialogWidth"/>
 		<list key="textEntries">
-			<item value="2"/>
-			<item value="2"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.commands"/>
-			<item value="org.eclipse.ui.commands"/>
 		</list>
 		<list key="textArray">
-			<item value="generate ge"/>
-			<item value="genera"/>
-			<item value="generate con"/>
-			<item value="gener"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jdt.ui.wizards.NewClassCreationWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.datatools.connectivity"/>
-			<item value="org.eclipse.team.cvs.ui.newWizards"/>
 			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
-			<item value="org.eclipse.jst.j2ee.internal"/>
-			<item value="org.eclipse.emf.codegen.ui.JETNewWizards"/>
 			<item value="org.eclipse.jpt.jaxb"/>
-			<item value="org.eclipse.m2e"/>
-			<item value="org.eclipse.pde.PDE"/>
-			<item value="org.eclipse.rse.ui.newWizards.rseCategory"/>
-			<item value="org.eclipse.mylyn.ui.wizards.new"/>
-			<item value="org.eclipse.pde.userAssistance"/>
-			<item value="org.eclipse.wst.web.ui"/>
-			<item value="org.eclipse.jst.ws.ui.new"/>
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">

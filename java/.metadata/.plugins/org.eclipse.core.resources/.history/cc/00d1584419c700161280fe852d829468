@@ -1,0 +1,32 @@
+package br.com.alura.test;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import br.com.alura.financas.modelo.Conta;
+import br.com.alura.financas.modelo.Movimentacao;
+import br.com.alura.financas.persistence.jpa.JPABase;
+
+
+public class TestaConsulta {
+	
+	public static void main(String[] args) {
+		
+		EntityManager entityManager = new JPABase().getEntityManagerFactory();
+		Query query = entityManager.createQuery("select from Movimentacao where conta = :conta");
+		
+		String titular = "João das Neves";
+		String numero = "31231";
+		String banco = "727";
+		String agencia = "32121";
+		Conta conta = new Conta(titular , numero, banco, agencia);
+		
+		query.setParameter("conta", conta);
+		
+		List<Movimentacao> movimentacaoList = query.getResultList();
+		
+	}
+
+}

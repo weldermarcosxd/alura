@@ -1,7 +1,0 @@
-package br.com.alura.gerenciador.web;
-
-public class Cookies {
-	
-	private final Cookie[] cookies;
-
-}

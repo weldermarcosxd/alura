@@ -1,0 +1,99 @@
+package br.com.alura.financas.modelo;
+
+import java.math.BigDecimal;
+import java.util.Calendar;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+public class Movimentacao {
+
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	private BigDecimal valor;
+	
+	@Enumerated(EnumType.STRING)
+	private TipoMovimentacao tipoMovimentacao;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Calendar data;
+	
+	private String descricao;
+	
+	@ManyToOne 
+	@JoinColumn(name="some_model_id")
+	@ForeignKey(name="FK_some_model")
+	private Conta conta;
+
+	public Movimentacao(BigDecimal valor, TipoMovimentacao tipoMovimentacao,Calendar data, String descricao, Conta conta) {
+		this.valor = valor;
+		this.tipoMovimentacao = tipoMovimentacao;
+		this.descricao = descricao;
+		this.data = data;
+		this.conta = conta;
+	}
+	
+	@Override
+	public String toString() {
+		return this.getConta().getTitular() + " - " + this.tipoMovimentacao.toString() + " - " + this.getValor();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
+	}
+
+	public TipoMovimentacao getTipoMovimentacao() {
+		return tipoMovimentacao;
+	}
+
+	public void setTipoMovimentacao(TipoMovimentacao tipoMovimentacao) {
+		this.tipoMovimentacao = tipoMovimentacao;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Conta getConta() {
+		return conta;
+	}
+
+	public void setConta(Conta conta) {
+		this.conta = conta;
+	}
+
+	public Calendar getData() {
+		return data;
+	}
+
+	public void setData(Calendar data) {
+		this.data = data;
+	}
+}

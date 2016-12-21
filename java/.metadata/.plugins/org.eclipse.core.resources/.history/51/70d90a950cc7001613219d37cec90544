@@ -1,0 +1,19 @@
+package br.com.alura.financas.modelo;
+
+import java.math.BigDecimal;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Movimentacao {
+
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private BigDecimal valor;
+	private TipoMovimentacao tipoMovimentacao;
+	private String descricao;
+	
+}

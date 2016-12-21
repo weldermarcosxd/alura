@@ -1,0 +1,11 @@
+package br.com.alura.test;
+
+import javax.persistence.EntityManager;
+
+import br.com.alura.financas.persistence.jpa.JPABase;
+
+public class TestaConsulta {
+	
+	new JPABase().getEntityManagerFactory();
+	
+}

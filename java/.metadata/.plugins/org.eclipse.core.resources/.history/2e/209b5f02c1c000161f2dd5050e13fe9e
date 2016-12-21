@@ -1,9 +1,0 @@
-package br.com.alura.gerenciador.web;
-
-import javax.servlet.http.HttpServlet;
-
-public class AdicionaEmpresa extends HttpServlet {
-
-	
-	
-}
