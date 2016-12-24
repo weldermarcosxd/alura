@@ -1,0 +1,19 @@
+package br.com.alura.financas.persistence.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import br.com.alura.financas.modelo.Movimentacao;
+
+public class MovimentacaoDAO {
+
+	public List<Movimentacao> getMovimentacoesConta(EntityManager entityManager){
+		
+		entityManager.createNamedQuery("getMovimentacoesConta", Movimentacao.class);
+		
+		
+		return null;
+	}
+	
+}

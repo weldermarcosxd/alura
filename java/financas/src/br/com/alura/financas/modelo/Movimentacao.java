@@ -12,8 +12,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+@NamedQueries({
+	@NamedQuery(name="getMovimentacoesConta", query="from Movimentacao where conta = :conta"),
+	@NamedQuery(name="getMovimentacoesTipo", query="from Movimentacao where tipoMovimentacao = :tipoMovimentacao"),
+	@NamedQuery(name="getMovimentacoesContaCount", query="select count(movimentacao) from Movimentacao movimentacao where movimentacao.conta = :conta"),
+	@NamedQuery(name="getValorMovimentacao", query="select max(movimentacao.valor) from Movimentacao movimentacao where movimentacao.conta = :conta")
+})
 
 @Entity
 public class Movimentacao {

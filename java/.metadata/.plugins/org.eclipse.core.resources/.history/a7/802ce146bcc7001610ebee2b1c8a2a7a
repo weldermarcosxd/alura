@@ -1,0 +1,12 @@
+package br.com.alura.financas.persistence.dao;
+
+import javax.persistence.EntityManager;
+import br.com.alura.financas.modelo.Conta;
+
+public class ContaDAO {
+
+	public Conta findById(EntityManager entityManager, Long id){
+		return null;
+	}
+	
+}

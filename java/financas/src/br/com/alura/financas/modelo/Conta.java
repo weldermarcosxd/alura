@@ -6,7 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+
+@NamedQueries({
+	@NamedQuery(name="findById", query=" select conta from Conta conta where conta.id = :id"),
+	@NamedQuery(name="getContaMovimentacoes", query="select conta from Conta conta join fetch conta.movimentacoes where conta = :conta")
+})
 
 @Entity
 public class Conta {

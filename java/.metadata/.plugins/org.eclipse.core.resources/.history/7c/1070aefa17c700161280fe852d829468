@@ -1,9 +1,0 @@
-package br.com.alura.test;
-
-import br.com.alura.financas.persistence.jpa.JPABase;
-
-public class TestaConsulta {
-	
-	new JPABase().
-	
-}

@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="br.com.caelum.empresa.modelo.Funcionario"/>
-<fullyQualifiedTypeName name="java.io.Writer"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="br.com.alura.gerenciador.Empresa"/>
-<fullyQualifiedTypeName name="br.com.alura.gerenciador.dao.EmpresaDAO"/>
-<fullyQualifiedTypeName name="javax.servlet.Filter"/>
-<fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
-<fullyQualifiedTypeName name="br.com.alura.gerenciador.dao.UsuarioDAO"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
-<fullyQualifiedTypeName name="br.com.alura.gerenciador.web.Cookies"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="br.com.alura.gerenciador.Usuario"/>
 <fullyQualifiedTypeName name="br.com.alura.gerenciador.web.BuscaEmpresa"/>
 <fullyQualifiedTypeName name="sun.rmi.server.Dispatcher"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
@@ -33,7 +20,6 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="be.com.alura.persistence.CategoriaDAO"/>
 <fullyQualifiedTypeName name="br.com.alura.model.Categoria"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="br.com.alura.model.Produto"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
@@ -44,12 +30,7 @@
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
 <fullyQualifiedTypeName name="javax.persistence.EnumType"/>
-<fullyQualifiedTypeName name="br.com.alura.financas.modelo.Conta"/>
-<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
-<fullyQualifiedTypeName name="java.math.BigDecimal"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="br.com.alura.financas.modelo.TipoMovimentacao"/>
-<fullyQualifiedTypeName name="br.com.alura.financas.modelo.Movimentacao"/>
 <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
 <fullyQualifiedTypeName name="com.mysql.fabric.xmlrpc.base.Data"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
@@ -58,6 +39,25 @@
 <fullyQualifiedTypeName name="javax.persistence.ForeignKey"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.ForeignKey"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-<fullyQualifiedTypeName name="br.com.alura.financas.persistence.jpa.JPABase"/>
+<fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="org.hibernate.engine.internal.Collections"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="org.hibernate.cfg.ExtendsQueueEntry"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.NamedQueries"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="br.com.alura.financas.modelo.TipoMovimentacao"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="br.com.alura.financas.persistence.jpa.JPABase"/>
+<fullyQualifiedTypeName name="br.com.alura.financas.persistence.dao.ContaDAO"/>
+<fullyQualifiedTypeName name="br.com.alura.financas.modelo.Conta"/>
+<fullyQualifiedTypeName name="br.com.alura.financas.modelo.Movimentacao"/>
+<fullyQualifiedTypeName name="br.com.alura.financas.persistence.dao.MovimentacaoDAO"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
 </qualifiedTypeNameHistroy>
