@@ -1,16 +1,17 @@
-<?php include("cabecalho.php"); ?>
 <?php
-    $nome = $_GET["nome"];
-    $preco = $_GET["preco"];
+    include("cabecalho.php");
+    include('connect.php');
+    include("ProdutoDAO.php");
 
-    $conexao = mysqli_connect( "localhost", "root", "root", "loja");
-    $query = "insert into produto (nome, preco) values ('{$nome}', {$preco})";
+    $nome = $_POST["nome"];
+    $preco = $_POST["preco"];
+    $descricao = $_POST["descricao"];
 
-    if(mysqli_query($conexao, $query)){
-        ?><p class="alert-success">O produto <?php $nome ?>, <?php $preco ?> foi inserido com sucesso!</p> <?php
+    if(insereNoBanco($conexao, $nome, $preco, $descricao)){
+        ?><p class="text-success">O produto <?php $nome ?>, <?php $preco ?> foi inserido com sucesso!</p> <?php
     }else{
-        ?><p class="alert-danger">O produto <?php $nome ?>, <?php $preco ?> não pode ser inserido!</p> <?php
+        $msg = mysqli_error($conexao);
+        ?><p class="text-danger">O produto <?php $nome ?>, <?php $preco ?> não pode ser inserido!<br> <?=$msg ?></p> <?php
     }
-    mysqli_close($conexao);
 ?>
 <? php include("footer.php"; ?>
