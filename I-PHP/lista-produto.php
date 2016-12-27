@@ -36,7 +36,7 @@
                 <td><?= $produto['nome'] ?></td>
                 <td><?= $produto['preco'] ?></td>
                 <td><?= substr($produto['descricao'], 0 , 45) ?></td>
-                <td><?= $produto['categoria'] ?></td>
+                <td><?= $produto['categoria_nome'] ?></td>
                 <td><form action="remove-produto.php" method="post">
                     <input type="hidden" name="id" value="<?= $produto['id'] ?>">
                     <button class="btn btn-danger">Remover</button>

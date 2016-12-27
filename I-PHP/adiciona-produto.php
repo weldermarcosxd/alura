@@ -6,8 +6,10 @@
     $nome = $_POST["nome"];
     $preco = $_POST["preco"];
     $descricao = $_POST["descricao"];
+    $categoria = $_POST["categoria"];
 
-    if(insereNoBanco($conexao, $nome, $preco, $descricao)){
+
+    if(insereNoBanco($conexao, $nome, $preco, $descricao, $categoria)){
         ?><p class="text-success">O produto <?php $nome ?>, <?php $preco ?> foi inserido com sucesso!</p> <?php
     }else{
         $msg = mysqli_error($conexao);
