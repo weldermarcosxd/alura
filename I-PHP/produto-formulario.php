@@ -5,8 +5,10 @@ include 'CategoriaDAO.php';
 
 $categoriaList = findList($conexao);
 ?>
+
+<h1>Altera Produto</h1>
 <form action="adiciona-produto.php" method="post">
-    <table>
+    <table class="table">
         <tr>
             <td>Nome:</td>
             <td><input type="text" class="form-group" name="nome"></td>
@@ -16,16 +18,23 @@ $categoriaList = findList($conexao);
             <td><input type="number" class="form-group" name="preco"></td>
         </tr>
         <tr>
+            <td></td>
+            <td><input type="checkbox" name="usado" value="true"> Usado</td>
+        </tr>
+        <tr>
             <td>Categoria:</td>
             <td>
+                <select name="categoria" class="form-group">
         <?php
             foreach ($categoriaList as $categoria) {
-        ?>
-            <input class="form-group" type="radio" name="categoria" value="<?=$categoria['id']?>"><?=$categoria['nome']?><br>
+                ?>
+                <option value="<?=$categoria['id']?>"><?=$categoria['nome']?></option>
         <?php
+
             }
         ?>
-        </td>
+                </select>
+            </td>
         </tr>
         <tr class="form-group">
             <td>Descrição:</td>
