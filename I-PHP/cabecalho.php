@@ -21,9 +21,6 @@
                 <li>
                     <a href="produto-formulario.php">Adicionar Produto</a>
                 </li>
-                <li>
-                    <a href="">Editar Produto</a>
-                </li>
             </ul>
         </div>
     </div>

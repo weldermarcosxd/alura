@@ -2,11 +2,17 @@
 include 'cabecalho.php';
 include 'connect.php';
 include 'CategoriaDAO.php';
+include("UsuarioRepositorio.php");
 
 $categoriaList = findList($conexao);
+
+if (!usuarioEstaLogado()) {
+    Header("Location: index.php?falhaDeSeguranca=true");
+    die();
+}
 ?>
 
-<h1>Altera Produto</h1>
+<h1>Adiciona Produto</h1>
 <form action="adiciona-produto.php" method="post">
     <table class="table">
         <tr>

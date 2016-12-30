@@ -1,11 +1,17 @@
 <?php
-include 'cabecalho.php';
-include 'connect.php';
-include 'CategoriaDAO.php';
-include 'ProdutoDAO.php';
+  include 'cabecalho.php';
+  include 'connect.php';
+  include 'CategoriaDAO.php';
+  include 'ProdutoDAO.php';
+  include("UsuarioRepositorio.php");
 
-$categoriaList = findList($conexao);
-$produto = findById($conexao, $_GET["id"]);
+  $categoriaList = findList($conexao);
+  $produto = findById($conexao, $_GET["id"]);
+
+  if(!usuarioEstaLogado()) {
+      Header("Location: index.php?falhaDeSeguranca=true");
+      die();
+  }
 ?>
 
 <h1>Altera Produto</h1>
@@ -34,8 +40,10 @@ $produto = findById($conexao, $_GET["id"]);
                 <select name="categoria" class="form-group">
         <?php
             foreach ($categoriaList as $categoria) {
+              $essaEhACategoria = $produto['categoria'] == $categoria['id'];
+              $selecao = $essaEhACategoria ? "selected='selected'" : "";
                 ?>
-                <option value="<?=$produto['categoria'] ?>"><?=$produto['categoria_nome'] ?></option>
+                <option value="<?=$categoria['id'] ?>" <?=$selecao ?>"><?=$categoria['nome'] ?></option>
         <?php
 
             }

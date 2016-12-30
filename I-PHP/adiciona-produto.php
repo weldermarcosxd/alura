@@ -2,6 +2,12 @@
     include("cabecalho.php");
     include('connect.php');
     include("ProdutoDAO.php");
+    include("UsuarioRepositorio.php");
+
+    if(!usuarioEstaLogado()) {
+      Header("Location: index.php?falhaDeSeguranca=true");
+      die();
+    }
 
     $nome = $_POST["nome"];
     $preco = $_POST["preco"];
