@@ -2,7 +2,7 @@
 session_start();
 require_once("PHPMailer/class.smtp.php");
 require_once('PHPMailer/PHPMailerAutoload.php');
-require_once 'UsuarioRepositorio.php';
+require_once 'model/UsuarioRepositorio.php';
 
 verificaUsuario();
 

@@ -1,7 +1,7 @@
 <?php
     require_once("cabecalho.php");
-    require_once("ProdutoDAO.php");
-    require_once('UsuarioRepositorio.php');
+    require_once 'dao/ProdutoDAO.php';
+    require_once 'model/UsuarioRepositorio.php';
 
     $id = $_POST["id"];
 
@@ -10,7 +10,7 @@
         header("Location:  lista-produto.php");
     }else{
         $msg = mysqli_error($conexao);
-        $_SESSION["danger"] = "O produto com id: {$id} não pode ser inserido! {$msg}";
+        $_SESSION["danger"] = "O produto com id: {$id} não pode ser removido! '{$msg}'";
         header("Location:  lista-produto.php");
     }
 ?>

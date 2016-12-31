@@ -1,11 +1,12 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'CategoriaDAO.php';
-require_once("UsuarioRepositorio.php");
+require_once 'dao/CategoriaDAO.php';
+require_once 'model/UsuarioRepositorio.php';
+require_once 'entity/Produto.php';
 
 $categoriaList = findList($conexao);
-$produto = array('nome' => "", 'preco' => "", 'descricao' => "", 'categoria' => 1 );
-$usado = 0;
+$produto = new Produto();
+$produto->setUsado(0);
 
 verificaUsuario();
 

@@ -1,14 +1,14 @@
   <tr>
       <td>Nome:</td>
-      <td><input type="text" class="form-group" name="nome" value="<?=$produto->nome ?>"></td>
+      <td><input type="text" class="form-group" name="nome" value="<?=$produto->getNome() ?>"></td>
   </tr>
   <tr>
       <td>Preco:</td>
-      <td><input type="number" class="form-group" name="preco" value="<?=$produto->preco ?>"></td>
+      <td><input type="number" class="form-group" name="preco" value="<?=$produto->getPreco() ?>"></td>
   </tr>
   <tr>
       <td></td>
-      <td><input type="checkbox" class="form-group" name="usado" value="true" checked="<?=$produto->usado?>"> Usado</td>
+      <td><input type="checkbox" class="form-group" name="usado" <?=$produto->getUsado() == 1 ? 'checked' : ''?>> Usado</td>
   </tr>
   <tr>
       <td>Categoria:</td>
@@ -16,10 +16,12 @@
           <select name="categoria" class="form-group">
   <?php
       foreach ($categoriaList as $categoria) {
-        $essaEhACategoria = $produto->categoria == $categoria->id;
+        if(null != $produto->getCategoria()){
+          $essaEhACategoria = $produto->getCategoria()->getId() == $categoria->getId();
+        }
         $selecao = $essaEhACategoria ? "selected='selected'" : "";
           ?>
-          <option value="<?=$categoria->id ?>" <?=$selecao ?>><?=$categoria->nome ?></option>
+          <option value="<?=$categoria->getId() ?>" <?=$selecao ?>><?=$categoria->getNome() ?></option>
   <?php
 
       }
@@ -29,5 +31,5 @@
   </tr>
   <tr class="form-group">
       <td>Descrição:</td>
-      <td><textarea name="descricao" rows="3" class="form-control"><?=$produto->descricao ?></textarea></td>
+      <td><textarea name="descricao" rows="3" class="form-control"><?=$produto->getDescricao() ?></textarea></td>
   </tr>

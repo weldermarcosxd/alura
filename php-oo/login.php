@@ -1,7 +1,7 @@
 <?php
     require_once("cabecalho.php");
-    require_once("UsuarioDAO.php");
-    require_once("UsuarioRepositorio.php");
+    require_once 'dao/UsuarioDAO.php';
+    require_once 'model/UsuarioRepositorio.php';
 
     $email = $_POST["email"];
     $pass = $_POST["pass"];

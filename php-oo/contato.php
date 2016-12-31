@@ -1,6 +1,6 @@
 <?php
   require_once("cabecalho.php");
-  require_once 'UsuarioRepositorio.php';
+  require_once 'model/UsuarioRepositorio.php';
 
   verificaUsuario();
 ?>

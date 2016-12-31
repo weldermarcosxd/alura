@@ -1,6 +1,12 @@
 <?php
   error_reporting(E_ALL ^ E_NOTICE);
   require_once("mensagens.php");
+
+  function carregaClasse($nomeDaClasse) {
+    require_once("entity/".$nomeDaClasse.".php");
+  }
+
+  spl_autoload_register("carregaClasse");
 ?>
 <html>
 <head>
