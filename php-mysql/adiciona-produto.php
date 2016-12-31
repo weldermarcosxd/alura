@@ -1,9 +1,10 @@
 <?php
-    include("cabecalho.php");
-    include('connect.php');
-    include("ProdutoDAO.php");
+    require_once("cabecalho.php");
+    require_once("ProdutoDAO.php");
+    require_once("UsuarioRepositorio.php");
 
-    $id = $_POST["id"];
+    verificaUsuario();
+
     $nome = $_POST["nome"];
     $preco = $_POST["preco"];
     $descricao = $_POST["descricao"];
@@ -11,11 +12,11 @@
     $usado = isset($_POST['usado']) ? 1 : 0;
 
 
-    if(atualizaNoBanco($conexao, $id, $nome, $preco, $descricao, $categoria, $usado)){
-        ?><p class="text-success">O produto <?php $nome ?>, <?php $preco ?> foi alterado com sucesso!</p> <?php
+    if(insereNoBanco($conexao, $nome, $preco, $descricao, $categoria, $usado)){
+        ?><p class="text-success">O produto <?php $nome ?>, <?php $preco ?> foi inserido com sucesso!</p> <?php
     }else{
         $msg = mysqli_error($conexao);
         ?><p class="text-danger">O produto <?php $nome ?>, <?php $preco ?> não pode ser inserido!<br> <?=$msg ?></p> <?php
     }
 ?>
-<? php include("footer.php"; ?>
+<? php require_once("footer.php"; ?>

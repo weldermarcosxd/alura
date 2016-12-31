@@ -1,29 +1,6 @@
-<?php include("cabecalho.php");
-      include("UsuarioRepositorio.php");
+<?php require_once("cabecalho.php");
+      require_once("UsuarioRepositorio.php");
 ?>
-<?php
-  if (usuarioEstaLogado() && isset($_GET["logado"]) && $_GET["logado"] == 1) {
-      ?> <p class="text-success">Usuário Logado</p> <?php
-
-  } else {
-      if (!usuarioEstaLogado() && isset($_GET["logado"]) && $_GET["logado"] === 0) {
-          ?> <p class="text-danger">Usuário inválido</p> <?php
-      }
-  }
-
-  if (isset($_GET["falhaDeSeguranca"])) {
-      ?>
-      <p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
-    <?php
-  }
-
-  if (isset($_GET["logout"]) && $_GET["logout"] == true) {
-      ?>
-      <p class="alert-warning">Logout realizado com sucesso!</p>
-    <?php
-  }
-
- ?>
   <h1>Bem vindo!</h1><br>
   <?php if (usuarioEstaLogado()) {
      ?>
@@ -52,4 +29,4 @@
   <?php
 
  } ?>
-<?php include './footer.php'; ?>
+<?php require_once './footer.php'; ?>

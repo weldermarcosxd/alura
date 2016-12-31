@@ -1,15 +1,14 @@
 <?php
-include 'cabecalho.php';
-include 'connect.php';
-include 'CategoriaDAO.php';
-include("UsuarioRepositorio.php");
+require_once 'cabecalho.php';
+require_once 'CategoriaDAO.php';
+require_once("UsuarioRepositorio.php");
 
 $categoriaList = findList($conexao);
+$produto = array('nome' => "", 'preco' => "", 'descricao' => "", 'categoria' => 1 );
+$usado = 0;
 
-if (!usuarioEstaLogado()) {
-    Header("Location: index.php?falhaDeSeguranca=true");
-    die();
-}
+verificaUsuario();
+
 ?>
 
 <h1>Adiciona Produto</h1>
@@ -49,4 +48,4 @@ if (!usuarioEstaLogado()) {
         <td><input type="submit" class="btn btn-primary"  value="Cadastrar"></td>
     </table>
 </form>
-<?php include './footer.php'; ?>
+<?php require_once './footer.php'; ?>

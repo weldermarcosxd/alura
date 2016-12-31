@@ -1,19 +1,7 @@
 <?php
 
-    include('cabecalho.php');
-    include('connect.php');
-    include('ProdutoDAO.php');
-
-?>
-
-<?php
-
-    if (array_key_exists('removido', $_GET) && $_GET['removido'] === 'true') {
-        ?>
-            <p class="alert-success">Produto com removido com sucesso!</p>
-        <?php
-    }
-
+    require_once('cabecalho.php');
+    require_once('ProdutoDAO.php');
  ?>
 
     <table class="table table-striped table-bordered table-hover">
@@ -32,12 +20,12 @@
 
         $produtoList = findListProduto($conexao);
         foreach ($produtoList as $produto) {
-        ?>
+            ?>
             <tr>
                 <td><?= $produto['id'] ?></td>
                 <td><?= $produto['nome'] ?></td>
                 <td><?= $produto['preco'] ?></td>
-                <td><?= substr($produto['descricao'], 0 , 45) ?></td>
+                <td><?= substr($produto['descricao'], 0, 45) ?></td>
                 <td><?= $produto['usado'] == 0 ? 'Não' : 'Sim' ?></td>
                 <td><?= $produto['categoria_nome'] ?></td>
                 <td><a class="btn btn-primary form-group" href="produto-formulario-alterar.php?id=<?= $produto['id'] ?>">Editar</a></td>
@@ -47,9 +35,10 @@
                 </form></td>
             </tr>
         <?php
+
         }
          ?>
         </tbody>
     </table>
 
-<?php include 'footer.php'; ?>
+<?php require_once 'footer.php'; ?>

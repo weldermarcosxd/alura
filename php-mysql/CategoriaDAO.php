@@ -1,4 +1,5 @@
 <?php
+  require_once('connect.php');
 
     function findList($conexao){
         $categoriaList = [];

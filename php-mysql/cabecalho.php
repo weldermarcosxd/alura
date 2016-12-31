@@ -1,4 +1,7 @@
-
+<?php
+  error_reporting(E_ALL ^ E_NOTICE);
+  require_once("mensagens.php");
+?>
 <html>
 <head>
     <title>Minha loja</title>
@@ -21,9 +24,17 @@
                 <li>
                     <a href="produto-formulario.php">Adicionar Produto</a>
                 </li>
+                <li>
+                    <a href="contato.php">Contato</a>
+                </li>
             </ul>
         </div>
     </div>
 
     <div class="container">
         <div class="principal">
+          <?php
+            mostraAlertas("success");
+            mostraAlertas("danger");
+            mostraAlertas("warning");
+          ?>

@@ -8,8 +8,8 @@ function usuarioEstaLogado() {
 
 function verificaUsuario() {
   if(!usuarioEstaLogado()) {
-     header("Location: index.php?falhaDeSeguranca=true");
-     die();
+    $_SESSION["danger"] = "Você não tem acesso a essa funcionalidade";
+    header("Location: index.php");
   }
 }
 
@@ -23,6 +23,7 @@ function authorize($email){
 
 function logout(){
   session_destroy();
-  header("Location: index.php?logout=true");
-  die();
+  session_start();
+  $_SESSION["warning"] = "Logout realizado com sucesso!";
+  header("Location: index.php");
 }
