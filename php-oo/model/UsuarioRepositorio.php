@@ -1,5 +1,8 @@
 <?php
 
+require_once 'dao/UsuarioDAO.php';
+require_once 'db/connect.php';
+
 session_start();
 
 function usuarioEstaLogado() {
@@ -19,6 +22,11 @@ function usuarioLogado() {
 
 function authorize($email){
    $_SESSION["usuarioLogado"] = $email;
+}
+
+function validaLogin($conexao,$email, $pass){
+  $usuarioDAO = new UsuarioDAO($conexao);
+  return $usuarioDAO->validaLogin($email, $pass);
 }
 
 function logout(){

@@ -1,16 +1,25 @@
 <?php
-  require_once 'db/connect.php';
+  class CategoriaDAO
+  {
+    private $conexao;
 
-    function findList($conexao){
+    public function __construct($conexao)
+    {
+        $this->conexao = $conexao;
+    }
+
+    public function findList()
+    {
         $categoriaList = [];
         $query = "select * from categoria";
-        $result = mysqli_query($conexao, $query);
-        echo mysqli_error($conexao);
+        $result = mysqli_query($this->conexao, $query);
+        echo mysqli_error($this->conexao);
         while ($categorias = mysqli_fetch_assoc($result)) {
-          $categoria = new Categoria();
-          $categoria->setId($categorias["id"]);
-          $categoria->setNome($categorias["nome"]);
-          array_push($categoriaList, $categoria);
+            $categoria = new Categoria();
+            $categoria->setId($categorias["id"]);
+            $categoria->setNome($categorias["nome"]);
+            array_push($categoriaList, $categoria);
         }
         return $categoriaList;
     }
+  }

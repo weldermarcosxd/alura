@@ -1,11 +1,12 @@
 <?php
     require_once("cabecalho.php");
-    require_once 'dao/ProdutoDAO.php';
     require_once 'model/UsuarioRepositorio.php';
+
+    $produtoDAO = new ProdutoDAO($conexao);
 
     $id = $_POST["id"];
 
-    if(removerDoBanco($conexao, $id)){
+    if($produtoDAO->removerDoBanco($id)){
         $_SESSION["success"] = "Produto removido com sucesso!";
         header("Location:  lista-produto.php");
     }else{

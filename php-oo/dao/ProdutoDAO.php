@@ -1,67 +1,122 @@
 <?php
-  require_once('db/connect.php');
+class ProdutoDAO
+{
+    private $conexao;
 
-    function insereNoBanco($conexao ,Produto $produto){
-      $produto->setNome(mysqli_real_escape_string($conexao, $produto->getNome()));
-      $produto->setDescricao(mysqli_real_escape_string($conexao, $produto->getDescricao()));
-      $produto->setPreco(mysqli_real_escape_string($conexao, $produto->getPreco()));
-      $query = "insert into produto (nome, preco, descricao, categoria, usado) values ('{$produto->getNome()}', {$produto->getPreco()}, '{$produto->getDescricao()}', {$produto->getCategoria()->getId()}, {$produto->getUsado()})";
-      return mysqli_query($conexao, $query);
+    public function __construct($conexao)
+    {
+        $this->conexao = $conexao;
     }
 
-    function atualizaNoBanco($conexao, Produto $produto){
-      $produto->setNome(mysqli_real_escape_string($conexao, $produto->getNome()));
-      $produto->setDescricao(mysqli_real_escape_string($conexao, $produto->getDescricao()));
-      $produto->setPreco(mysqli_real_escape_string($conexao, $produto->getPreco()));
-      $query = "update produto set nome = '{$produto->getNome()}', preco = {$produto->getPreco()}, descricao = '{$produto->getDescricao()}', categoria = {$produto->getCategoria()->getId()}, usado = {$produto->getUsado()} where id = {$produto->getId()}";
-      return mysqli_query($conexao, $query);
+    public function insereNoBanco(Produto $produto)
+    {
+      $produto->setNome(mysqli_real_escape_string($this->conexao, $produto->getNome()));
+      $produto->setDescricao(mysqli_real_escape_string($this->conexao, $produto->getDescricao()));
+      $produto->setPreco(mysqli_real_escape_string($this->conexao, $produto->getPreco()));
+
+      $isbn = "";
+      if($produto->isLivro()) {
+          $isbn = $produto->getIsbn();
+      }
+
+      $waterMark = "";
+      if($produto->temWaterMark()) {
+          $waterMark = $produto->getWaterMark();
+      }
+
+      $taxaImpressao = "";
+      if($produto->temTaxaImpressao()) {
+          $taxaImpressao = $produto->getTaxaImpressao();
+      }
+
+      $tipoProduto = get_class($produto);
+
+      $query = "insert into produto (nome, preco, descricao, categoria,
+              usado, isbn, tipoProduto, waterMark, taxaImpressao)
+                  values ('{$produto->getNome()}', {$produto->getPreco()},
+                      '{$produto->getDescricao()}', {$produto->getCategoria()->getId()},
+                          {$produto->getUsado()}, '{$isbn}', '{$tipoProduto}',
+                              '{$waterMark}', '{$taxaImpressao}')";
+
+      return mysqli_query($this->conexao, $query);
     }
 
-    function removerDoBanco($conexao ,$id){
+    public function atualizaNoBanco(Produto $produto)
+    {
+      $isbn = "";
+      if($produto->isLivro()) {
+          $isbn = $produto->getIsbn();
+      }
+
+      $waterMark = "";
+      if($produto->temWaterMark()) {
+          $waterMark = $produto->getWaterMark();
+      }
+
+      $taxaImpressao = "";
+      if($produto->temTaxaImpressao()) {
+          $taxaImpressao = $produto->getTaxaImpressao();
+      }
+
+      $tipoProduto = get_class($produto);
+
+      $query = "update produto set nome = '{$produto->getNome()}',
+          preco = {$produto->getPreco()}, descricao = '{$produto->getDescricao()}',
+              categoria= {$produto->getCategoria()->getId()},
+                  usado = {$produto->getUsado()}, isbn = '{$isbn}',
+                      tipoProduto = '{$tipoProduto}', waterMark = '{$waterMark}',
+                          taxaImpressao = '{$taxaImpressao}' where id = '{$produto->getId()}'";
+
+      return mysqli_query($this->conexao, $query);
+    }
+
+    public function removerDoBanco($id)
+    {
         $query = "delete from produto where id = {$id}";
-        return mysqli_query($conexao, $query);
+        error_log(print_r($query, true));
+        return mysqli_query($this->conexao, $query);
     }
 
-    function findListProduto($conexao){
+    public function findListProduto()
+    {
         $produtoList = [];
         $query = "select produto.*, categoria.nome as categoria_nome from produto join categoria on produto.categoria = categoria.id";
-        $result = mysqli_query($conexao, $query);
-        echo mysqli_error($conexao);
+        $result = mysqli_query($this->conexao, $query);
+        echo mysqli_error($this->conexao);
         while ($produto_arr = mysqli_fetch_assoc($result)) {
-          $produto = new Produto();
-          $categoria = new Categoria();
-          $categoria->setNome($produto_arr["categoria_nome"]);
-          $categoria->setId($produto_arr["categoria"]);
+            $tipoProduto = $produto_arr['tipoProduto'];
+            $produto_id = $produto_arr['id'];
+            $categoria_nome = $produto_arr['categoria_nome'];
 
-          $produto->setId($produto_arr["id"]);
-          $produto->setNome($produto_arr["nome"]);
-          $produto->setPreco($produto_arr["preco"]);
-          $produto->setDescricao($produto_arr["descricao"]);
-          $produto->setCategoria($categoria);
-          $produto->setUsado($produto_arr["usado"]);
-          array_push($produtoList, $produto);
+            $factory = new ProdutoFactory();
+            $produto = $factory->criaPor($tipoProduto, $produto_arr);
+            $produto->atualizaBaseadoEm($produto_arr);
+
+            $produto->setId($produto_id);
+            $produto->getCategoria()->setNome($categoria_nome);
+
+            array_push($produtoList, $produto);
         }
         return $produtoList;
     }
 
-    function findById($conexao, $id){
-        $produtoList = [];
-        $query = "select produto.*, categoria.nome as categoria_nome from produto join categoria on produto.categoria = categoria.id where produto.id = {$id}";
-        $result = mysqli_query($conexao, $query);
-        echo mysqli_error($conexao);
+    public function findById($id)
+    {
+        $query = "select produto.*, categoria.nome as categoria_nome from produto join categoria on produto.categoria = categoria.id where produto.id = '{$id}'";
+        $result = mysqli_query($this->conexao, $query);
         $produto_arr = mysqli_fetch_assoc($result);
 
-        $produto = new Produto();
-        $categoria = new Categoria();
-        $categoria->setNome($produto_arr["categoria_nome"]);
-        $categoria->setId($produto_arr["categoria"]);
+        $tipoProduto = $produto_arr['tipoProduto'];
+        $produto_id = $produto_arr['id'];
+        $categoria_id = $produto_arr['categoria'];
 
-        $produto->setId($produto_arr["id"]);
-        $produto->setNome($produto_arr["nome"]);
-        $produto->setPreco($produto_arr["preco"]);
-        $produto->setDescricao($produto_arr["descricao"]);
-        $produto->setCategoria($categoria);
-        $produto->setUsado($produto_arr["usado"]);
+        $factory = new ProdutoFactory();
+        $produto = $factory->criaPor($tipoProduto, $produto_arr);
+        $produto->atualizaBaseadoEm($produto_arr);
+
+        $produto->setId($produto_id);
+        $produto->getCategoria()->setId($categoria_id);
 
         return $produto;
     }
+}

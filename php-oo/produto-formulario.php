@@ -1,11 +1,11 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'dao/CategoriaDAO.php';
 require_once 'model/UsuarioRepositorio.php';
-require_once 'entity/Produto.php';
 
-$categoriaList = findList($conexao);
-$produto = new Produto();
+$categoriaDAO = new CategoriaDAO($conexao);
+
+$categoriaList = $categoriaDAO->findList($conexao);
+$produto = new LivroFisico();
 $produto->setUsado(0);
 
 verificaUsuario();

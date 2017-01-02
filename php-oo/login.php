@@ -1,6 +1,5 @@
 <?php
     require_once("cabecalho.php");
-    require_once 'dao/UsuarioDAO.php';
     require_once 'model/UsuarioRepositorio.php';
 
     $email = $_POST["email"];

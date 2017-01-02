@@ -1,23 +1,30 @@
 <?php
     require_once("cabecalho.php");
-    require_once 'dao/ProdutoDAO.php';
-    require_once 'dao/CategoriaDAO.php';
     require_once 'model/UsuarioRepositorio.php';
+
+    $categoriaDAO = new CategoriaDAO($conexao);
+    $produtoDAO = new ProdutoDAO($conexao);
 
     verificaUsuario();
 
-    $produto = new Produto();
-    $categoria = new Categoria();
+    $id = $_POST["id"];
+    $tipoProduto = $_POST['tipoProduto'];
+    $categoria_id = $_POST['categoria'];
 
-    $produto->setId($_POST["id"]);
-    $produto->setNome($_POST["nome"]);
-    $produto->setPreco($_POST["preco"]);
-    $produto->setDescricao($_POST["descricao"]);
-    $categoria->setId($_POST["categoria"]);
-    $produto->setCategoria($categoria);
-    $produto->setUsado(isset($_POST['usado']) ? 1 : 0);
+    $factory = new ProdutoFactory();
+    $produto = $factory->criaPor($tipoProduto, $_POST);
+    $produto->atualizaBaseadoEm($_POST);
 
-    if(atualizaNoBanco($conexao, $produto)){
+    $produto->setId($id);
+    $produto->getCategoria()->setId($categoria_id);
+
+    if(array_key_exists('usado', $_POST)) {
+        $produto->setUsado(1);
+    } else {
+        $produto->setUsado(0);
+    }
+
+    if($produtoDAO->atualizaNoBanco($produto)){
         ?><p class="text-success">O produto <?php $produto->getNome() ?>, <?php $produto->getPreco() ?> foi alterado com sucesso!</p> <?php
     }else{
         $msg = mysqli_error($conexao);

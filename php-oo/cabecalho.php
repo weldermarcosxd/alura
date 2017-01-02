@@ -1,9 +1,14 @@
 <?php
   error_reporting(E_ALL ^ E_NOTICE);
   require_once("mensagens.php");
+  require_once 'db/connect.php';
 
   function carregaClasse($nomeDaClasse) {
-    require_once("entity/".$nomeDaClasse.".php");
+    if(is_file("entity/".$nomeDaClasse.".php")){
+      require_once("entity/".$nomeDaClasse.".php");
+    }elseif (is_file("dao/".$nomeDaClasse.".php")) {
+      require_once("dao/".$nomeDaClasse.".php");
+    }
   }
 
   spl_autoload_register("carregaClasse");

@@ -1,22 +1,27 @@
 <?php
     require_once("cabecalho.php");
-    require_once 'dao/ProdutoDAO.php';
     require_once 'model/UsuarioRepositorio.php';
+
+    $produtoDAO = new ProdutoDAO($conexao);
 
     verificaUsuario();
 
-    $produto = new Produto();
-    $categoria = new Categoria();
+    $tipoProduto = $_POST['tipoProduto'];
+    $categoria_id = $_POST['categoria'];
 
-    $produto->setNome($_POST["nome"]);
-    $produto->setPreco($_POST["preco"]);
-    $produto->setDescricao($_POST["descricao"]);
-    $categoria->setId($_POST["categoria"]);
-    $produto->setCategoria($categoria);
-    $produto->setUsado(isset($_POST['usado']) ? 1 : 0);
+    $factory = new ProdutoFactory();
+    $produto = $factory->criaPor($tipoProduto, $_POST);
+    $produto->atualizaBaseadoEm($_POST);
 
+    $produto->getCategoria()->setId($categoria_id);
 
-    if(insereNoBanco($conexao, $produto)){
+    if(array_key_exists('usado', $_POST)) {
+        $produto->setUsado(1);
+    } else {
+        $produto->setUsado(0);
+    }
+
+    if($produtoDAO->insereNoBanco($produto)){
         ?><p class="text-success">O produto <?php $produto->getNome() ?>, <?php $produto->getPreco() ?> foi inserido com sucesso!</p> <?php
     }else{
         $msg = mysqli_error($conexao);
@@ -24,4 +29,3 @@
     }
 ?>
 <? php require_once("footer.php"; ?>
-()
