@@ -1,0 +1,21 @@
+/*
+Theme Name: Célula Web
+Theme URI: https://www.celulaweb.com.br/
+Author: Welder Marcos
+Author URI:weldermarcosxd@gmail.com
+Description: Tema para o site da empresa.
+Version: 0.0.1
+Tags: internet, web, site, app, sistemas web.
+Text Domain: celulaweb
+*/
+
+/*Noticias*/
+.imagem-destaque-post{
+  width: 100%;
+  height: 200px;
+}
+
+.imagem-destaque-post img{
+  height: inherit;
+  width: 100%;
+}

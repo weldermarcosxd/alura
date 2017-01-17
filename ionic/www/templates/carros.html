@@ -1,0 +1,7 @@
+<ion-view title="Alura Car">
+  <ion-content padding="true" class="has-header">
+    <ion-list>
+      <a class="item" ui-sref="detalhe({'carros':carros})" ng-repeat="carro in Carros.listaCarros">{{carro.nome}} - R{{carro.preco | currency}}</a>
+    </ion-list>
+  </ion-content>
+</ion-view>
