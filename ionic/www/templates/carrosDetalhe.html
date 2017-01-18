@@ -6,10 +6,25 @@
       </div>
       <div class="item item-text-wrap">
         {{Detalhe.carro.nome}}
+
+        <ul class="list">
+          <li class="item item-toggle" ng-repeat="acessory in Detalhe.acessories">
+            {{acessory.nome}}: R{{acessory.preco | currency}}
+            <label class="toggle toggle-assertive">
+              <input ng-model='isMarcado' type="checkbox" ng-click="Detalhe.increment(acessory.preco, isMarcado)">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
+
       </div>
       <div class="item item-divider">
         R{{Detalhe.carro.preco | currency}}
       </div>
     </div>
+
+    <a class="button button-positive button-full" ui-sref="finalizar({nome:Detalhe.carro.nome, preco:Detalhe.carro.preco})">Confirmar</a>
   </ion-content>
 </ion-view>

@@ -1,0 +1,15 @@
+<ion-view title="Login">
+  <ion-content padding="true" class="has-header">
+    <form ng-submit="Login.authenticate()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="email" ng-model="Login.credentials.email" placeholder="Email">
+        </label>
+        <label class="item item-input">
+          <input type="password" ng-model="Login.credentials.pass" placeholder="Senha">
+        </label>
+      </div>
+      <button type="submit" class="button button-positive button-full">Entrar</button>
+    </form>
+  </ion-content>
+</ion-view>

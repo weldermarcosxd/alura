@@ -10,6 +10,13 @@ function config($stateProvider, $urlRouterProvider) {
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginController',
+      controllerAs: 'Login'
+    })
+
     .state('carros', {
       url: '/carros',
       templateUrl: 'templates/carros.html',
@@ -18,12 +25,19 @@ function config($stateProvider, $urlRouterProvider) {
     })
 
     .state('detalhe', {
-      url: '/detalhe/:carros',
+      url: '/detalhe/:nome/:preco',
       templateUrl: 'templates/carrosDetalhe.html',
       controller: 'CarrosDetalheController',
       controllerAs: 'Detalhe'
     })
 
-  $urlRouterProvider.otherwise('/carros/detalhe');
+    .state('finalizar', {
+      url: '/finalizar/:nome/:preco',
+      templateUrl: 'templates/CarrosFinalizar.html',
+      controller: 'CarrosFinalizarController',
+      controllerAs: 'Finalizar'
+    })
+
+  $urlRouterProvider.otherwise('/login');
 
 };
