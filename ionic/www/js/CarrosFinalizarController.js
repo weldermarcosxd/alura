@@ -5,14 +5,37 @@
     .module('starter')
     .controller('CarrosFinalizarController', CarrosFinalizarController);
 
-  CarrosFinalizarController.$inject = ['$scope', '$stateParams', '$state', '$ionicPopup', 'PedidosService'];
+  CarrosFinalizarController.$inject = ['$scope', '$stateParams', '$state', '$ionicPopup', '$ionicPlatform', '$ionicHistory', 'ionicDatePicker', 'PedidosService'];
 
   /* @ngInject */
-  function CarrosFinalizarController($scope, $stateParams, $state, $ionicPopup, PedidosService) {
+  function CarrosFinalizarController($scope, $stateParams, $state, $ionicPopup, $ionicPlatform, $ionicHistory, ionicDatePicker, PedidosService) {
     var vm = this;
 
     vm.carro = angular.fromJson($stateParams);
     vm.carro.preco = parseInt(vm.carro.preco);
+    vm.dataSelecionada = new Date();
+
+    $ionicHistory.nextViewOptions({
+      disableBack: true,
+      historyRoot: false
+    });
+
+    $ionicPlatform.ready(function() {
+      $ionicHistory.nextViewOptions({
+        disableBack: true,
+        historyRoot: false
+      });
+    });
+
+    vm.calendario = function() {
+      var configuracoes = {
+        callback: function(data) {
+          vm.dataSelecionada = new Date(data);
+        },
+        weeksList: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
+      }
+      ionicDatePicker.openDatePicker(configuracoes)
+    };
 
     vm.finalizar = function() {
 
@@ -23,16 +46,16 @@
         });
 
         popup.then(function() {
-          $state.go('carros');
+          $state.go('menu.carros');
         });
-      }, function (err) {
+      }, function(err) {
         var popup = $ionicPopup.alert({
           title: 'Erro',
           template: err
         });
 
         popup.then(function() {
-          $state.go('carros');
+          $state.go('menu.carros');
         });
       });
     }

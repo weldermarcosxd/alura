@@ -17,27 +17,58 @@ function config($stateProvider, $urlRouterProvider) {
       controllerAs: 'Login'
     })
 
-    .state('carros', {
+    .state('menu', {
+      url: '/menu',
+      templateUrl: 'templates/menu.html',
+      abstract: true,
+      controller: 'MenuController',
+      controllerAs: 'Menu'
+    })
+
+    .state('menu.perfil', {
+      url: '/perfil',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/perfil.html',
+          controller: 'PerfilController',
+          controllerAs: 'Perfil'
+        }
+      }
+    })
+
+    .state('menu.carros', {
       url: '/carros',
-      templateUrl: 'templates/carros.html',
-      controller: 'CarrosController',
-      controllerAs: 'Carros'
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/carros.html',
+          controller: 'CarrosController',
+          controllerAs: 'Carros'
+        }
+      }
     })
 
-    .state('detalhe', {
+    .state('menu.detalhe', {
       url: '/detalhe/:nome/:preco',
-      templateUrl: 'templates/carrosDetalhe.html',
-      controller: 'CarrosDetalheController',
-      controllerAs: 'Detalhe'
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/carrosDetalhe.html',
+          controller: 'CarrosDetalheController',
+          controllerAs: 'Detalhe'
+        }
+      }
     })
 
-    .state('finalizar', {
+    .state('menu.finalizar', {
       url: '/finalizar/:nome/:preco',
-      templateUrl: 'templates/CarrosFinalizar.html',
-      controller: 'CarrosFinalizarController',
-      controllerAs: 'Finalizar'
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/CarrosFinalizar.html',
+          controller: 'CarrosFinalizarController',
+          controllerAs: 'Finalizar'
+        }
+      }
     })
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/menu/carros');
 
 };

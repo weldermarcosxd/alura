@@ -5,17 +5,25 @@
     .module('starter')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$scope', '$stateParams','$state', 'LoginService'];
+  LoginController.$inject = ['$rootScope', '$scope', '$stateParams','$state', 'LoginService'];
 
   /* @ngInject */
-  function LoginController($scope, $stateParams, $state, LoginService) {
+  function LoginController($rootScope, $scope, $stateParams, $state, LoginService) {
     var vm = this;
 
     vm.credentials = {};
 
     vm.authenticate = function () {
       LoginService.authenticate(vm.credentials).then(function (result) {
-        $state.go('carros');
+        if(result.email == null){
+          $rootScope.usuario = {
+            "nome": "Welder Marcos",
+            "email": "weldermarcosxd@gmail.com",
+            "dataNascimento": "15/12/1993",
+            "telefone": "37998191067"
+          };
+        }
+        $state.go('menu.carros');
       });
     }
   }

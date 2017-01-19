@@ -1,0 +1,30 @@
+<ion-view>
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar">
+        <img ng-src="{{Perfil.usuarioLogado.foto}}" alt="perfil">
+        {{Perfil.usuarioLogado.nome}}
+        <button ng-if="Perfil.editando" ng-click="Perfil.tirarFoto()" class="button button-small button-dark ion-ios-camera"></button>
+      </div>
+      <div class="item item-body">
+        <div class="list">
+          <label class="item item-input">
+              <span ng-if="!Perfil.editando" class="input-label"> {{Perfil.usuarioLogado.dataNascimento}}</span>
+              <input ng-if="Perfil.editando" type="text" ng-model="Perfil.usuarioLogado.dataNascimento">
+          </label>
+          <label class="item item-input">
+              <span ng-if="!Perfil.editando" class="input-label">{{Perfil.usuarioLogado.telefone | brPhoneNumber}}</span>
+              <input ng-if="Perfil.editando" type="text" ng-model="Perfil.usuarioLogado.telefone">
+          </label>
+          <label class="item item-input">
+              <span ng-if="!Perfil.editando" class="input-label"> {{Perfil.usuarioLogado.email}}</span>
+              <input ng-if="Perfil.editando" type="text" ng-model="Perfil.usuarioLogado.email">
+          </label>
+        </div>
+        <button ng-click="Perfil.alterarEstado()" ng-class="Perfil.botao.class" class="button button-full">{{Perfil.botao.label}}</button>
+      </div>
+    </div>
+
+  </ion-content>
+
+</ion-view>
