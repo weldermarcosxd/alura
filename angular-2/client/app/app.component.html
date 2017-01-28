@@ -1,4 +1,10 @@
 <div class="jumbotron">
-  <h1 class="text-center">Alurapic</h1>
+  <h1 class="text-center">AluraPic</h1>
 </div>
-<foto *ngFor="let foto of fotos" [url]="foto.url" [title]="foto.titulo"></foto>
+<div class="container">
+  <div class="row">
+    <painel *ngFor="let foto of fotos" [title]="foto.titulo" class="col-md-2">
+      <foto [url]="foto.url" [title]="foto.titulo"></foto>
+    </painel>
+  </div>
+</div>
