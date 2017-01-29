@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h1 class="text-center">AluraPic</h1>
+</div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <a [routerLink]="['/cadastro']" class="btn btn-primary">
+                            Nova foto
+                        </a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <painel *ngFor="let foto of fotos" [title]="foto.titulo" class="col-md-2">
+            <foto [url]="foto.url" [title]="foto.titulo"></foto>
+        </painel>
+    </div>
+</div>
