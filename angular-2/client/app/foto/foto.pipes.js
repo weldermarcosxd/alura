@@ -6,18 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var foto_component_1 = require("./foto.component");
-var foto_pipes_1 = require("./foto.pipes");
-var FotoModule = (function () {
-    function FotoModule() {
+var FotoPipes = (function () {
+    function FotoPipes() {
     }
-    return FotoModule;
+    FotoPipes.prototype.transform = function (fotos, search) {
+        return fotos.filter(function (foto) { return foto.titulo.toLowerCase().includes(search.toLowerCase()); });
+    };
+    return FotoPipes;
 }());
-FotoModule = __decorate([
-    core_1.NgModule({
-        declarations: [foto_component_1.FotoComponent, foto_pipes_1.FotoPipes],
-        exports: [foto_component_1.FotoComponent, foto_pipes_1.FotoPipes]
+FotoPipes = __decorate([
+    core_1.Pipe({
+        name: 'listFilter'
     })
-], FotoModule);
-exports.FotoModule = FotoModule;
-//# sourceMappingURL=foto.module.js.map
+], FotoPipes);
+exports.FotoPipes = FotoPipes;
+//# sourceMappingURL=foto.pipes.js.map

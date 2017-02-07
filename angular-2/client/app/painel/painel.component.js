@@ -12,6 +12,9 @@ var core_1 = require("@angular/core");
 var PainelComponent = (function () {
     function PainelComponent() {
     }
+    PainelComponent.prototype.ngOnInit = function () {
+        this.title = this.title.length > 7 ? this.title.substr(0, 7) + "..." : this.title;
+    };
     return PainelComponent;
 }());
 __decorate([

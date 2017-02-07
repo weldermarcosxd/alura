@@ -11,17 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var FotoComponent = (function () {
     function FotoComponent() {
+        this.url = '';
+        this.titulo = '';
+        this.descricao = '';
     }
     return FotoComponent;
 }());
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
+    __metadata("design:type", String)
 ], FotoComponent.prototype, "url", void 0);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
-], FotoComponent.prototype, "title", void 0);
+    __metadata("design:type", String)
+], FotoComponent.prototype, "titulo", void 0);
 FotoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

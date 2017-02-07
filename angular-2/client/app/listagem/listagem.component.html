@@ -12,6 +12,7 @@
                             Nova foto
                         </a>
                     </span>
+                    <input  #search (keyup)="0" class="form-control" type="text" placeholder="Filter...">
                 </div>
             </form>
         </div>
@@ -19,7 +20,7 @@
     <br>
 
     <div class="row">
-        <painel *ngFor="let foto of fotos" [title]="foto.titulo" class="col-md-2">
+        <painel *ngFor="let foto of fotos | listFilter:search.value" [title]="foto.titulo | uppercase" class="col-md-2">
             <foto [url]="foto.url" [title]="foto.titulo"></foto>
         </painel>
     </div>
