@@ -5,6 +5,7 @@ import { ListagemComponent } from './listagem/listagem.component';
 const app_routes: Routes =  [
   { path: '', component: ListagemComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'cadastro/:id', component: CadastroComponent },
   { path: '**', redirectTo: ''}
 ];
 

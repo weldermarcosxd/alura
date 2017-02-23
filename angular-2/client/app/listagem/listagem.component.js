@@ -8,20 +8,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+var foto_service_1 = require("../foto/foto.service");
 var ListagemComponent = (function () {
-    function ListagemComponent(http) {
+    function ListagemComponent(service) {
         var _this = this;
         this.fotos = [];
-        http.get('v1/fotos').map(function (res) {
-            return res.json();
-        }).subscribe(function (fotos) {
-            _this.fotos = fotos;
-        }, function (err) {
-            console.log(err);
-        });
+        this.mensagem = "";
+        this.fotoService = service;
+        service.findList().subscribe(function (fotos) { return _this.fotos = fotos; }, function (err) { return console.log(err); });
     }
+    ListagemComponent.prototype.remove = function (foto) {
+        var _this = this;
+        this.fotoService.delete(foto).subscribe(function () {
+            var novasFotos = _this.fotos.slice(0);
+            var index = novasFotos.indexOf(foto);
+            novasFotos.splice(index, 1);
+            _this.fotos = novasFotos;
+            _this.mensagem = 'Foto removida com sucesso';
+        }, function (err) {
+            console.log(" Falha na remoção da foto.");
+            _this.mensagem = 'Não foi possível remover a foto';
+        });
+    };
     return ListagemComponent;
 }());
 ListagemComponent = __decorate([
@@ -30,7 +40,7 @@ ListagemComponent = __decorate([
         selector: 'listagem',
         templateUrl: './listagem.component.html',
     }),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [foto_service_1.FotoService])
 ], ListagemComponent);
 exports.ListagemComponent = ListagemComponent;
 //# sourceMappingURL=listagem.component.js.map

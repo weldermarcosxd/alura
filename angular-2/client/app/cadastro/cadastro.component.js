@@ -8,34 +8,56 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
 var foto_component_1 = require("../foto/foto.component");
+var foto_service_1 = require("../foto/foto.service");
 var CadastroComponent = (function () {
-    function CadastroComponent(http, formBuilder) {
+    function CadastroComponent(service, formBuilder, activatedRoute, router) {
+        var _this = this;
         this.foto = new foto_component_1.FotoComponent();
-        this.http = http;
+        this.mensagem = '';
+        this.service = service;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.activatedRoute.params.subscribe(function (params) {
+            var id = params['id'];
+            if (id) {
+                _this.service.findById(id).subscribe(function (foto) { return _this.foto = foto; }, function (err) { return console.log("Erro na busca do registro: " + err); });
+            }
+        }, function (err) {
+            console.log('Erro na busca do registro: ' + err);
+        });
         this.meuForm = formBuilder.group({
             titulo: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(4)])],
             url: ['', forms_1.Validators.required],
             descricao: ['']
         });
+        this.foto;
     }
     CadastroComponent.prototype.cadastrar = function (event) {
         var _this = this;
         event.preventDefault();
-        var header = new http_1.Headers();
-        header.append('Content-type', 'application/json');
-        var url = "v1/fotos";
-        this.http.post(url, JSON.stringify(this.foto), { headers: header })
-            .subscribe(function () {
-            _this.foto = new foto_component_1.FotoComponent();
-            console.log('Foto Salva com sucesso!');
-        }, function (err) {
-            console.log('ERROR: ' + err);
-        });
-        console.log(this.foto);
+        if (this.foto._id) {
+            this.service.update(this.foto)
+                .subscribe(function () {
+                console.log('Foto alterada com sucesso!');
+                _this.router.navigate(['']);
+            }, function (err) {
+                console.log('ERROR: ' + err);
+            });
+        }
+        else {
+            this.service.post(this.foto)
+                .subscribe(function () {
+                _this.foto = new foto_component_1.FotoComponent();
+                console.log('Foto Salva com sucesso!');
+            }, function (err) {
+                console.log('ERROR: ' + err);
+            });
+        }
     };
     return CadastroComponent;
 }());
@@ -45,7 +67,7 @@ CadastroComponent = __decorate([
         selector: 'cadastro',
         templateUrl: './cadastro.component.html',
     }),
-    __metadata("design:paramtypes", [http_1.Http, forms_1.FormBuilder])
+    __metadata("design:paramtypes", [foto_service_1.FotoService, forms_1.FormBuilder, router_1.ActivatedRoute, router_1.Router])
 ], CadastroComponent);
 exports.CadastroComponent = CadastroComponent;
 //# sourceMappingURL=cadastro.component.js.map

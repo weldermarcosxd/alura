@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var FotoService = (function () {
@@ -20,8 +21,17 @@ var FotoService = (function () {
     FotoService.prototype.findList = function () {
         return this.http.get(this.url).map(function (res) { return res.json(); });
     };
+    FotoService.prototype.findById = function (id) {
+        return this.http.get(this.url + "/" + id).map(function (res) { return res.json(); });
+    };
     FotoService.prototype.post = function (foto) {
         return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers });
+    };
+    FotoService.prototype.update = function (foto) {
+        return this.http.put(this.url + "/" + foto._id, JSON.stringify(foto), { headers: this.headers });
+    };
+    FotoService.prototype.delete = function (foto) {
+        return this.http.delete(this.url + "/" + foto._id);
     };
     return FotoService;
 }());

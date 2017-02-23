@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FotoComponent } from '../foto/foto.component';
+import { FotoService } from '../foto/foto.service';
 
 @Component({
     moduleId: module.id,
@@ -11,11 +13,31 @@ import { FotoComponent } from '../foto/foto.component';
 export class CadastroComponent {
 
     foto: FotoComponent = new FotoComponent();
-    http: Http;
+    service: FotoService;
     meuForm: FormGroup;
+    activatedRoute: ActivatedRoute;
+    router: Router;
+    mensagem: string = '';
 
-    constructor(http: Http, formBuilder: FormBuilder) {
-        this.http = http;
+
+    constructor(service: FotoService, formBuilder: FormBuilder, activatedRoute: ActivatedRoute, router: Router) {
+        this.service = service;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+
+        this.activatedRoute.params.subscribe(params => {
+            let id = params['id'];
+
+            if (id) {
+                this.service.findById(id).subscribe(
+                    foto => this.foto = foto,
+                    err => console.log("Erro na busca do registro: " + err)
+                );
+            }
+
+        }, err => {
+            console.log('Erro na busca do registro: ' + err);
+        });
 
         this.meuForm = formBuilder.group({
             titulo: ['', Validators.compose(
@@ -24,22 +46,29 @@ export class CadastroComponent {
             url: ['', Validators.required],
             descricao: ['']
         });
+
+        this.foto
     }
 
     cadastrar(event) {
         event.preventDefault();
 
-        let header = new Headers();
-        header.append('Content-type', 'application/json');
-        let url: string = "v1/fotos";
-
-        this.http.post(url, JSON.stringify(this.foto), { headers: header })
-            .subscribe(() => {
-                this.foto = new FotoComponent();
-                console.log('Foto Salva com sucesso!');
-            }, err => {
-                console.log('ERROR: ' + err);
-            });
-        console.log(this.foto);
+        if (this.foto._id) {
+          this.service.update(this.foto)
+              .subscribe(() => {
+                  console.log('Foto alterada com sucesso!');
+                  this.router.navigate(['']);
+              }, err => {
+                  console.log('ERROR: ' + err);
+              });
+        }else{
+          this.service.post(this.foto)
+              .subscribe(() => {
+                  this.foto = new FotoComponent();
+                  console.log('Foto Salva com sucesso!');
+              }, err => {
+                  console.log('ERROR: ' + err);
+              });
+        }
     }
 }
