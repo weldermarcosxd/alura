@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs';
-import { FotoComponent } from './foto.component'
+import { FotoComponent } from './foto.component';
+import { CadastroMessage } from '../cadastro/cadastro.message';
 
 @Injectable()
 export class FotoService {
@@ -24,8 +25,14 @@ export class FotoService {
         return this.http.get(this.url + "/" + id).map(res => res.json());
     }
 
-    post(foto: FotoComponent): Observable<Response> {
-        return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers });
+    persist(foto: FotoComponent): Observable<CadastroMessage> {
+        if(foto._id){
+          return this.http.put(this.url + "/" + foto._id, JSON.stringify(foto), { headers: this.headers })
+            .map(() => new CadastroMessage("Foto alterada com sucesso", false));
+        }else{
+          return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers }).
+            map(() => new CadastroMessage("Foto inserida com sucesso", true));;
+        }
     }
 
     update(foto: FotoComponent): Observable<Response> {

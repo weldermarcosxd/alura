@@ -35,29 +35,19 @@ var CadastroComponent = (function () {
             url: ['', forms_1.Validators.required],
             descricao: ['']
         });
-        this.foto;
     }
     CadastroComponent.prototype.cadastrar = function (event) {
         var _this = this;
         event.preventDefault();
-        if (this.foto._id) {
-            this.service.update(this.foto)
-                .subscribe(function () {
-                console.log('Foto alterada com sucesso!');
+        this.service.persist(this.foto)
+            .subscribe(function (res) {
+            _this.mensagem = res.message;
+            _this.foto = new foto_component_1.FotoComponent();
+            if (!res.include)
                 _this.router.navigate(['']);
-            }, function (err) {
-                console.log('ERROR: ' + err);
-            });
-        }
-        else {
-            this.service.post(this.foto)
-                .subscribe(function () {
-                _this.foto = new foto_component_1.FotoComponent();
-                console.log('Foto Salva com sucesso!');
-            }, function (err) {
-                console.log('ERROR: ' + err);
-            });
-        }
+        }, function (err) {
+            console.log('ERROR: ' + err);
+        });
     };
     return CadastroComponent;
 }());

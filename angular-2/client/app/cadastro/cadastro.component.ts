@@ -46,29 +46,18 @@ export class CadastroComponent {
             url: ['', Validators.required],
             descricao: ['']
         });
-
-        this.foto
     }
 
     cadastrar(event) {
         event.preventDefault();
 
-        if (this.foto._id) {
-          this.service.update(this.foto)
-              .subscribe(() => {
-                  console.log('Foto alterada com sucesso!');
-                  this.router.navigate(['']);
-              }, err => {
-                  console.log('ERROR: ' + err);
-              });
-        }else{
-          this.service.post(this.foto)
-              .subscribe(() => {
-                  this.foto = new FotoComponent();
-                  console.log('Foto Salva com sucesso!');
-              }, err => {
-                  console.log('ERROR: ' + err);
-              });
-        }
+        this.service.persist(this.foto)
+            .subscribe((res) => {
+                this.mensagem = res.message;
+                this.foto = new FotoComponent();
+                if(!res.include) this.router.navigate(['']);
+            }, err => {
+                console.log('ERROR: ' + err);
+            });
     }
 }

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var cadastro_message_1 = require("../cadastro/cadastro.message");
 var FotoService = (function () {
     function FotoService(http) {
         this.url = 'v1/fotos';
@@ -24,8 +25,16 @@ var FotoService = (function () {
     FotoService.prototype.findById = function (id) {
         return this.http.get(this.url + "/" + id).map(function (res) { return res.json(); });
     };
-    FotoService.prototype.post = function (foto) {
-        return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers });
+    FotoService.prototype.persist = function (foto) {
+        if (foto._id) {
+            return this.http.put(this.url + "/" + foto._id, JSON.stringify(foto), { headers: this.headers })
+                .map(function () { return new cadastro_message_1.CadastroMessage("Foto alterada com sucesso", false); });
+        }
+        else {
+            return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers }).
+                map(function () { return new cadastro_message_1.CadastroMessage("Foto inserida com sucesso", true); });
+            ;
+        }
     };
     FotoService.prototype.update = function (foto) {
         return this.http.put(this.url + "/" + foto._id, JSON.stringify(foto), { headers: this.headers });
