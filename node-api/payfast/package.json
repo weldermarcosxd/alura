@@ -1,0 +1,33 @@
+{
+  "name": "payfast",
+  "version": "1.0.0",
+  "description": "gateway de pagamento com api rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/weldermarcosxd/alura.git"
+  },
+  "keywords": [
+    "node",
+    "api",
+    "rest"
+  ],
+  "author": "weldermarcosxd@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weldermarcosxd/alura/issues"
+  },
+  "homepage": "https://github.com/weldermarcosxd/alura#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "consign": "^0.1.2",
+    "express": "^4.14.1",
+    "express-validator": "^3.1.2",
+    "mysql": "^2.13.0",
+    "restify": "^4.3.0",
+    "soap": "^0.18.0"
+  }
+}
