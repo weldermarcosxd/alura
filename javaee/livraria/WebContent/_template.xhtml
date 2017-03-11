@@ -8,10 +8,17 @@
 	<h:head />
 	<h:body>
 		<div id="cabecalho">
-			<h:graphicImage library="img" name="logo.png" />
+			<h:graphicImage library="img" name="logo.png" /><br />
+			<h:column rendered="#{usuarioLogado != null}">
+				<h:outputText value="#{sessionScope['usuarioLogado'].email}" />
+				<h:form>
+					<h:commandLink value="Logout" action="#{loginBean.logout()}"></h:commandLink>
+				</h:form>
+			</h:column>
 			<h1>
 				<ui:insert name="titulo"></ui:insert>
 			</h1>
+				
 		</div>
 	
 		<div id="conteudo">

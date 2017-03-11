@@ -1,0 +1,17 @@
+package br.com.caelum.livraria.dao;
+
+import javax.persistence.EntityManager;
+
+import br.com.caelum.livraria.modelo.Usuario;
+
+public class UsuarioDAO {
+
+	public Boolean autenticar(Usuario usuario) {
+		EntityManager entityManager = new JPAUtil().getEntityManager();
+		Usuario result = em.createQuery("select count(n) from livro n").getSingleResult();
+		em.close();
+		
+		return null;
+	}
+
+}

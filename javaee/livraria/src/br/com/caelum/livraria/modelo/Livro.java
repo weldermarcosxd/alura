@@ -34,10 +34,6 @@ public class Livro implements Serializable {
 	public List<Autor> getAutores() {
 		return autores;
 	}
-	
-	public void removeAutor(Autor autor) {
-	    this.autores.remove(autor);        
-	}
 
 	public void adicionaAutor(Autor autor) {
 		this.autores.add(autor);
@@ -84,6 +80,10 @@ public class Livro implements Serializable {
 
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
+	}
+
+	public void removeAutor(Autor autor) {
+		this.autores.remove(autor);		
 	}
 
 }

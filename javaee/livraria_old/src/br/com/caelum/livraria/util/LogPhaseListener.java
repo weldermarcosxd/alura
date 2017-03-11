@@ -4,20 +4,22 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
-@SuppressWarnings("serial")
 public class LogPhaseListener implements PhaseListener {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
-	public void afterPhase(PhaseEvent event) {
+	public void afterPhase(PhaseEvent arg0) {
 	}
 
 	@Override
 	public void beforePhase(PhaseEvent event) {
-//		System.out.println("Fase: " + event.getPhaseId());
+		System.out.println("FASE: " + event.getPhaseId());
 	}
 
 	@Override
 	public PhaseId getPhaseId() {
 		return PhaseId.ANY_PHASE;
 	}
+
 }

@@ -10,7 +10,6 @@ import javax.persistence.EntityManager;
 import br.com.caelum.livraria.modelo.Autor;
 import br.com.caelum.livraria.modelo.Livro;
 
-
 public class PopulaBanco {
 
 	public static void main(String[] args) {
@@ -27,6 +26,9 @@ public class PopulaBanco {
 
 		Autor coelho = geraAutor("Paulo Coelho");
 		em.persist(coelho);
+
+		Autor lobato = geraAutor("Monteiro Lobato");
+		em.persist(lobato);
 
 		Livro casmurro = geraLivro("978-8-52-504464-8", "Dom Casmurro",
 				"10/01/1899", 24.90, assis);

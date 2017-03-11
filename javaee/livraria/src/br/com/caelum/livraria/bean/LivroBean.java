@@ -21,8 +21,16 @@ public class LivroBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Livro livro = new Livro();
-
 	private Integer autorId;
+	private Integer livroId;
+
+	public Integer getLivroId() {
+		return livroId;
+	}
+
+	public void setLivroId(Integer livroId) {
+		this.livroId = livroId;
+	}
 
 	public void setAutorId(Integer autorId) {
 		this.autorId = autorId;
@@ -64,31 +72,31 @@ public class LivroBean implements Serializable {
 		}
 
 		if (this.livro.getId() == null) {
-	        new DAO<Livro>(Livro.class).adiciona(this.livro);        
-	    } else {
-	        new DAO<Livro>(Livro.class).atualiza(this.livro);
-	    }
+			new DAO<Livro>(Livro.class).adiciona(this.livro);
+		} else {
+			new DAO<Livro>(Livro.class).atualiza(this.livro);
+		}
 
 		this.livro = new Livro();
 	}
-	
-	public void remover(Livro livro) {
-	    System.out.println("Removendo livro " + livro.getTitulo());
-	    new DAO<Livro>(Livro.class).remove(livro);
-	}
-	
+
 	public void carregar(Livro livro) {
-	    System.out.println("Carregando livro " + livro.getTitulo());
-	    this.livro = livro;
+		System.out.println("Carregando livro " + livro.getTitulo());
+		this.livro = livro;
+	}
+
+	public void remover(Livro livro) {
+		System.out.println("Removendo livro " + livro.getTitulo());
+		new DAO<Livro>(Livro.class).remove(livro);
+	}
+
+	public void removerAutorDoLivro(Autor autor) {
+		this.livro.removeAutor(autor);
 	}
 
 	public String formAutor() {
 		System.out.println("Chamanda do formulário do Autor.");
 		return "autor?faces-redirect=true";
-	}
-	
-	public void removerAutorDoLivro(Autor autor) {
-	    this.livro.removeAutor(autor);
 	}
 
 	public void comecaComDigitoUm(FacesContext fc, UIComponent component,
@@ -101,4 +109,9 @@ public class LivroBean implements Serializable {
 		}
 
 	}
+	
+	  public void carregaPelaId() {
+	        this.livro = new DAO<Livro>(Livro.class).buscaPorId(this.livroId);
+	    }
+
 }
