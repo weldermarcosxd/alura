@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head />
+<h:body>
+	<div id="cabecalho">
+		<h:graphicImage library="img" name="logo.png" />
+		<h1>
+			<ui:insert name="titulo"></ui:insert>
+		</h1>
+	</div>
+	<div id="conteudo">
+		<ui:insert name="conteudo">
+		</ui:insert>
+	</div>
+	<div id="rodape">
+		<h5>
+			<ui:insert name="pagina"></ui:insert><BR />
+			Copright 2017
+		</h5>
+	</div>
+</h:body>
+</html>
