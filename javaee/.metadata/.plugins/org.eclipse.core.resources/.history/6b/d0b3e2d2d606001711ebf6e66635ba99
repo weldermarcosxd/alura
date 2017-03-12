@@ -1,0 +1,16 @@
+package br.com.caelum.livraria.bean;
+
+@ManagedBean
+@SessionScoped
+public class TemaBean {
+
+    private String tema = "vader";
+
+    public String getTema() {
+        return tema;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+}

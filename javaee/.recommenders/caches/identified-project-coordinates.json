@@ -1,1 +1,1 @@
-[[{"location":"/server/alura/javaee/livraria/WebContent/WEB-INF/lib/primefaces-6.0.jar","type":"JAR","hints":{}},"org.primefaces:primefaces:6.0.0"],[{"location":"/server/alura/javaee/livraria","type":"PROJECT","hints":{"PROJECT_NAME":"livraria"}},"ABSENT"]]
+[[{"location":"/usr/lib/jvm/java-8-openjdk-amd64","type":"JRE","hints":{}},"jre:jre:8.0.0"],[{"location":"/server/alura/javaee/livraria/WebContent/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar","type":"JAR","hints":{}},"org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1"]]
