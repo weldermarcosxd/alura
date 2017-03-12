@@ -1,0 +1,38 @@
+package br.com.caelum.livraria.modelo;
+
+import java.util.List;
+
+import org.hibernate.mapping.Map;
+import org.primefaces.model.LazyDataModel;
+import org.primefaces.model.SortOrder;
+
+import br.com.caelum.livraria.dao.DAO;
+
+public class LivroDataModel extends LazyDataModel<Livro>{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1124086823970414164L;
+	private DAO dao = new DAO<Livro>(Livro.class);
+	private String genero;
+	
+	public LivroDataModel() {
+	    super.setRowCount(dao.quantidadeDeElementos());
+	}
+	
+	@Override
+	public List<Livro> load(int inicio, int quantidade, String campoOrdenacao, SortOrder sentidoOrdenacao, Map<String, Object> filtros) {
+	    String titulo = (String) filtros.get("titulo");
+
+	    return dao.listaTodosPaginada(inicio, quantidade, campoOrdenacao, titulo);
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+}

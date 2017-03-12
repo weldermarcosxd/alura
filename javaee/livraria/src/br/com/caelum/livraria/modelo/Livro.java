@@ -23,6 +23,7 @@ public class Livro implements Serializable {
 	private Integer id;
 
 	private String titulo;
+	private String genero;
 	private String isbn;
 	private double preco;
 	@Temporal(TemporalType.DATE)
@@ -30,14 +31,6 @@ public class Livro implements Serializable {
 
 	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Autor> autores = new ArrayList<Autor>();
-
-	public List<Autor> getAutores() {
-		return autores;
-	}
-
-	public void adicionaAutor(Autor autor) {
-		this.autores.add(autor);
-	}
 
 	public Livro() {
 	}
@@ -48,6 +41,14 @@ public class Livro implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public List<Autor> getAutores() {
+		return autores;
+	}
+
+	public void adicionaAutor(Autor autor) {
+		this.autores.add(autor);
 	}
 
 	public String getTitulo() {
@@ -84,6 +85,14 @@ public class Livro implements Serializable {
 
 	public void removeAutor(Autor autor) {
 		this.autores.remove(autor);		
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 }

@@ -1,9 +1,13 @@
 package br.com.caelum.livraria.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import br.com.caelum.livraria.modelo.Livro;
 
 public class DAO<T> {
 
@@ -71,23 +75,56 @@ public class DAO<T> {
 
 	public int contaTodos() {
 		EntityManager em = new JPAUtil().getEntityManager();
-		long result = (Long) em.createQuery("select count(n) from livro n")
-				.getSingleResult();
+		long result = (Long) em.createQuery("select count(n) from livro n").getSingleResult();
 		em.close();
 
 		return (int) result;
 	}
 
-	public List<T> listaTodosPaginada(int firstResult, int maxResults) {
+	public List<T> listaTodosPaginada(int firstResult, int maxResults, String coluna, String valor) {
 		EntityManager em = new JPAUtil().getEntityManager();
 		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
-		query.select(query.from(classe));
+		Root<T> root = query.from(classe);
 
-		List<T> lista = em.createQuery(query).setFirstResult(firstResult)
-				.setMaxResults(maxResults).getResultList();
+		if (valor != null)
+			query = query.where(em.getCriteriaBuilder().like(root.<String>get(coluna), valor + "%"));
+
+		List<T> lista = em.createQuery(query).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
 
 		em.close();
 		return lista;
+	}
+
+	public int quantidadeDeElementos() {
+		EntityManager em = new JPAUtil().getEntityManager();
+		long result = (Long) em.createQuery("select count(n) from " + classe.getSimpleName() + " n").getSingleResult();
+		em.close();
+
+		return (int) result;
+	}
+
+	public List<Livro> listaTodosPaginada(int firstResult, int maxResults, Map<String, Object> filtros) {
+		EntityManager em = new JPAUtil().getEntityManager();
+		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
+		Root<T> root = query.from(classe);
+
+		for (Map.Entry<String, Object> filtro : filtros.entrySet()) {
+			if (filtro.getValue() != null) {
+				if(filtro.getKey().equals("preco")){
+					query = query.where(
+							em.getCriteriaBuilder().lessThan(root.<String>get(filtro.getKey()), filtro.getValue().toString()));
+				}else if(filtro.getKey().equals("dataLancamento")){
+				}else{
+					query = query.where(
+							em.getCriteriaBuilder().like(root.<String>get(filtro.getKey()), filtro.getValue() + "%"));
+				}
+			}
+		}
+
+		List<T> lista = em.createQuery(query).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+
+		em.close();
+		return (List<Livro>) lista;
 	}
 
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="h:outputText" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="p:outputText"/>
+			<item value="h:column"/>
+			<item value="h:outputText"/>
+			<item value="h:dataTable"/>
+			<item value="h:form"/>
+			<item value="h:inputText"/>
+			<item value="h:selectOneMenu"/>
+			<item value="h:outputLabel"/>
+		</list>
+		<list key="replacehistory">
+			<item value="h:outputText"/>
+			<item value="p:column"/>
+			<item value="p:outputText"/>
+			<item value="p:dataTable"/>
+			<item value="p:form"/>
+			<item value="p:inputText"/>
+			<item value="p:selectOneMenu"/>
+			<item value="p:outputLabel"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="271" key="DIALOG_WIDTH"/>
+		<item value="1|Open Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="436" key="DIALOG_HEIGHT"/>
+		<item value="813" key="DIALOG_X_ORIGIN"/>
+		<item value="96" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

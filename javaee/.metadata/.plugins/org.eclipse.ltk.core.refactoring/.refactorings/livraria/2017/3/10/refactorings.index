@@ -12,3 +12,7 @@
 1489245339236	Copy file
 1489245349660	Move file
 1489245355649	Delete element
+1489255652641	Extract local variable 'dao'
+1489256417273	Copy file
+1489257092029	Encapsulate field 'livroDataModel'
+1489257731998	Encapsulate field 'genero'

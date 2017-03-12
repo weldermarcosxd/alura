@@ -1,0 +1,7 @@
+package br.com.caelum.livraria.modelo;
+
+import org.primefaces.model.LazyDataModel;
+
+public class LivroDataModel extends LazyDataModel<Livro>{
+
+}
