@@ -873,3 +873,43 @@
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-03-12 01:31:15.157
 !MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2017-03-12 02:00:33.483
+!MESSAGE Server processes have been terminated.
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-03-13 00:30:01.357
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-03-13 00:30:08.220
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2017-03-13 00:43:33.528
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2017-03-13 00:43:33.732
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-03-13 00:43:33.869
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-03-13 00:43:36.078
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2017-03-13 00:44:42.568
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2017-03-13 00:44:42.769
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-03-13 00:44:42.820
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-03-13 00:44:44.938
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2017-03-13 00:44:44.981
+!MESSAGE Module livraria on WildFly 10.x not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2017-03-13 00:45:04.988
+!MESSAGE Module livraria on WildFly 10.x still not ready to be shown in browser. Aborting delay.

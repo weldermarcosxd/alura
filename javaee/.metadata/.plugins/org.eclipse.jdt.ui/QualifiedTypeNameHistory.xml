@@ -20,7 +20,11 @@
 <fullyQualifiedTypeName name="org.hibernate.mapping.Map"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="br.com.caelum.livraria.dao.DAO"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="javax.faces.bean.SessionScoped"/>
+<fullyQualifiedTypeName name="javax.faces.bean.ViewScoped"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.faces.bean.ManagedBean"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

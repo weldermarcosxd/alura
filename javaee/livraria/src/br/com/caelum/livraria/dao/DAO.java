@@ -103,6 +103,7 @@ public class DAO<T> {
 		return (int) result;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Livro> listaTodosPaginada(int firstResult, int maxResults, Map<String, Object> filtros) {
 		EntityManager em = new JPAUtil().getEntityManager();
 		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
