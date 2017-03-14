@@ -1,3 +1,6 @@
 1489277208205	Encapsulate field 'genero'
 1489292888925	Rename resource 'cendas.xhtml'
 1489292894214	Move file
+1489461528402	Move compilation unit
+1489461999663	Rename field 'dao'
+1489462013671	Rename field 'livroDAo'

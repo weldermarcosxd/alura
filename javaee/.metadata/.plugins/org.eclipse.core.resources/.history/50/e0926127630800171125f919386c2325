@@ -1,0 +1,12 @@
+package br.com.caelum.livraria.dao;
+
+import br.com.caelum.livraria.modelo.Autor;
+
+public class AutorDAO {
+
+	public Autor buscaPorId(Integer autorId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

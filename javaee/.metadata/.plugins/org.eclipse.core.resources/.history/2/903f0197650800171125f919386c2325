@@ -1,0 +1,29 @@
+package br.com.caelum.livraria.dao;
+
+import java.util.List;
+
+import br.com.caelum.livraria.modelo.Livro;
+
+public class LivroDAO {
+
+	public Livro buscaPorId(Integer livroId) {
+		return null;
+	}
+
+	public void remove(Livro livro) {
+		
+	}
+
+	public void atualiza(Livro livro) {
+		
+	}
+
+	public void adiciona(Livro livro) {
+		
+	}
+
+	public List<Livro> listaTodos() {
+		return null;
+	}
+
+}

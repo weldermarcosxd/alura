@@ -1,0 +1,29 @@
+package br.com.caelum.livraria.dao;
+
+import java.util.List;
+
+import br.com.caelum.livraria.modelo.Autor;
+
+public class AutorDAO {
+
+	public Autor buscaPorId(Integer autorId) {
+		return null;
+	}
+
+	public void adiciona(Autor autor) {
+		
+	}
+
+	public void remove(Autor autor) {
+		
+	}
+
+	public void atualiza(Autor autor) {
+		
+	}
+
+	public List<Autor> listaTodos() {
+		return null;
+	}
+
+}
