@@ -1,0 +1,25 @@
+package br.com.caelum.livraria.tx;
+
+import java.io.Serializable;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+
+import br.com.caelum.livraria.bean.Transacional;
+
+@Transacional
+public class GerenciadorDeTransacao implements Serializable {
+
+	private static final long serialVersionUID = 3195108295235384392L;
+	
+	@Inject
+    EntityManager manager;
+
+	public void executaTX() {
+        manager.getTransaction().begin();
+
+        //chama o método do DAO que precisa de TX
+
+        manager.getTransaction().commit();
+    }
+}

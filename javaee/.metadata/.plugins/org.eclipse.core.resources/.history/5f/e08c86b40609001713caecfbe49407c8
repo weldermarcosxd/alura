@@ -1,0 +1,8 @@
+<beans>
+	<interceptors>
+		<class>br.com.caelum.livraria.tx.GerenciadorDeTransacao</class>
+	</interceptors>
+	<interceptors>
+		<class>br.com.caelum.livraria.log.TempoDeExecucaoInterceptor</class>
+	</interceptors>
+</beans>

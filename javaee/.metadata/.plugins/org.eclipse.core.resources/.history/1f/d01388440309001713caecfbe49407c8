@@ -1,0 +1,3 @@
+<interceptors>
+        <class>br.com.caelum.livraria.tx.GerenciadorDeTransacao</class>
+    </interceptors>

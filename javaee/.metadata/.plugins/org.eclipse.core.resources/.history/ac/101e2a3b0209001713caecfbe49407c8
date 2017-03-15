@@ -1,0 +1,16 @@
+package br.com.caelum.livraria.tx;
+
+import java.io.Serializable;
+
+public class GerenciadorDeTransacao implements Serializable {
+
+	private static final long serialVersionUID = 3195108295235384392L;
+
+	public void executaTX() {
+        manager.getTransaction().begin();
+
+        //chama o método do DAO que precisa de TX
+
+        manager.getTransaction().commit();
+    }
+}

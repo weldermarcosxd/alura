@@ -1,0 +1,20 @@
+package br.com.caelum.livraria.dao;
+
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+
+import br.com.caelum.livraria.modelo.Venda;
+
+public class VendaDAO {
+	
+	@Inject
+	EntityManager entityManager;
+
+	public List<Venda> listaTodas() {
+		entityManager.createQuery("", Venda.class)
+		return null;
+	}
+
+}
