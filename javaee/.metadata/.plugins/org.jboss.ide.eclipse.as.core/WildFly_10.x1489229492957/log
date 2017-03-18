@@ -1914,3 +1914,6 @@ java.lang.Exception: Could not delete /home/welder/wildfly-10.1.0.Final/standalo
 	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3172)
 	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2017-03-15 01:05:05.248
+!MESSAGE Server processes have been terminated.

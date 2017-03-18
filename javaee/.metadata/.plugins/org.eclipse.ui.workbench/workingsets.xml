@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489629389292_1" label="jsf" name="jsf">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/livraria-spring" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/livraria" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/livraria-maven" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/livraria-wildfly" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489629436290_3" label="Maven" name="Maven">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/produtos" type="4"/>
+<item elementID="=lojaweb" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489718666735_4" label="jaguar" name="jaguar">
+<item elementID="=rhdemo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489718792852_5" label="jaguar2" name="jaguar2">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/jcompany" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/jcompany-bom" type="4"/>
+<item elementID="=jcompany-service" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=jcompany-unit-test" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=jcompany-service-archetype" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=jcompany-html-archetype" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489229848825_0" label="Window Working Set" name="Aggregate for window 1489229848825"/>
 </workingSetManager>

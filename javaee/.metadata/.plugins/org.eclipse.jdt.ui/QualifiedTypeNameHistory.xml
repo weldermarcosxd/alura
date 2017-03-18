@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
-<fullyQualifiedTypeName name="br.com.caelum.livraria.dao.UsuarioDAO"/>
 <fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
 <fullyQualifiedTypeName name="javax.persistence.NoResultException"/>
 <fullyQualifiedTypeName name="sun.nio.cs.Surrogate.Generator"/>
 <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
 <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
-<fullyQualifiedTypeName name="br.com.caelum.livraria.modelo.Usuario"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="javax.faces.application.FacesMessage"/>
 <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
@@ -28,13 +26,26 @@
 <fullyQualifiedTypeName name="br.com.caelum.livraria.dao.DAO"/>
 <fullyQualifiedTypeName name="br.com.caelum.livraria.modelo.Autor"/>
 <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
-<fullyQualifiedTypeName name="javax.enterprise.inject.Produces"/>
-<fullyQualifiedTypeName name="javax.enterprise.context.RequestScoped"/>
 <fullyQualifiedTypeName name="javax.enterprise.inject.Disposes"/>
 <fullyQualifiedTypeName name="br.com.caelum.livraria.dao.AutorDAO"/>
-<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
 <fullyQualifiedTypeName name="br.com.caelum.livraria.modelo.Livro"/>
-<fullyQualifiedTypeName name="javax.inject.Inject"/>
 <fullyQualifiedTypeName name="br.com.caelum.livraria.dao.LivroDAO"/>
+<fullyQualifiedTypeName name="java.lang.annotation.Target"/>
+<fullyQualifiedTypeName name="java.lang.annotation.ElementType"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javax.interceptor.InvocationContext"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="javax.inject.Named"/>
+<fullyQualifiedTypeName name="javax.faces.view.ViewScoped"/>
+<fullyQualifiedTypeName name="br.com.caelum.livraria.dao.UsuarioDAO"/>
+<fullyQualifiedTypeName name="br.com.caelum.livraria.modelo.Usuario"/>
+<fullyQualifiedTypeName name="javax.enterprise.inject.Produces"/>
+<fullyQualifiedTypeName name="javax.enterprise.context.RequestScoped"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="javax.inject.Inject"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="br.com.caelum.livraria.modelo.Venda"/>
 </qualifiedTypeNameHistroy>
