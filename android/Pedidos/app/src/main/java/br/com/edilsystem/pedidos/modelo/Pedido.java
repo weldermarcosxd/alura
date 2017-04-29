@@ -6,13 +6,14 @@ import java.io.Serializable;
  * Created by welder on 22/04/17.
  */
 
-public class Pedido implements Serializable{
+public class Pedido implements Serializable {
     private Long id;
     private String nome;
     private String endereco;
     private String telefone;
     private String site;
     private Double nota;
+    private String fotoUrl;
 
     public Long getId() {
         return id;
@@ -60,6 +61,14 @@ public class Pedido implements Serializable{
 
     public void setNota(Double nota) {
         this.nota = nota;
+    }
+
+    public String getFotoUrl() {
+        return fotoUrl;
+    }
+
+    public void setFotoUrl(String fotoUrl) {
+        this.fotoUrl = fotoUrl;
     }
 
     @Override

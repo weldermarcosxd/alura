@@ -2,13 +2,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.edisystem.pedidos.br.com.edilsystem.pedidos.modelo.FormularioActivity">
+    tools:context="br.com.edilsystem.pedidos.FormularioActivity">
 
     <android.widget.LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="225dp">
+
+            <ImageView
+                android:id="@+id/formulario_foto"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/person"
+                android:background="#00a8ec" />
+
+            <Button
+                android:id="@+id/formulario_botao_camera"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/camera"
+                android:elevation="6dp"
+                android:stateListAnimator="@null"/>
+
+
+        </RelativeLayout>
 
         <EditText
             android:layout_width="match_parent"

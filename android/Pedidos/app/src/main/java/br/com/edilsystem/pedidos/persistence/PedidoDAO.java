@@ -18,20 +18,24 @@ import br.com.edilsystem.pedidos.modelo.Pedido;
 public class PedidoDAO extends SQLiteOpenHelper {
 
     public PedidoDAO(Context context) {
-        super(context, "Pedidos", null, 1);
+        super(context, "Pedidos", null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE IF NOT EXISTS pedidos (id INTEGER PRIMARY KEY, nome TEXT NOT NULL, endereco TEXT, telefone TEXT, site TEXT, nota REAL);";
+        String sql = "CREATE TABLE IF NOT EXISTS pedidos (id INTEGER PRIMARY KEY, nome TEXT NOT NULL, endereco TEXT, telefone TEXT, site TEXT, nota REAL, foto_url TEXT);";
         db.execSQL(sql);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE IF EXISTS pedidos;";
-        db.execSQL(sql);
-        onCreate(db);
+        String sql = "";
+
+        switch (oldVersion){
+            case 1:
+                sql = "ALTER TABLE pedidos add column foto_url TEXT";
+                db.execSQL(sql);
+        }
     }
 
     public void persist(Pedido pedido) {
@@ -50,6 +54,7 @@ public class PedidoDAO extends SQLiteOpenHelper {
         contentValues.put("telefone", pedido.getTelefone());
         contentValues.put("site", pedido.getSite());
         contentValues.put("nota", pedido.getNota());
+        contentValues.put("foto_url", pedido.getFotoUrl());
         return contentValues;
     }
 
@@ -66,6 +71,7 @@ public class PedidoDAO extends SQLiteOpenHelper {
             pedido.setTelefone(cursor.getString(cursor.getColumnIndex("telefone")));
             pedido.setSite(cursor.getString(cursor.getColumnIndex("site")));
             pedido.setNota(cursor.getDouble(cursor.getColumnIndex("nota")));
+            pedido.setFotoUrl(cursor.getString(cursor.getColumnIndex("foto_url")));
             pedidoList.add(pedido);
         }
         cursor.close();
@@ -85,5 +91,14 @@ public class PedidoDAO extends SQLiteOpenHelper {
         ContentValues contentValues = getContentValues(pedido);
 
         sqLiteDatabase.update("pedidos", contentValues , "id = ?", params);
+    }
+
+    public  boolean findByPhone(String tel){
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        String[] params = {tel};
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM pedidos WHERE telefone = ? ;", params);
+        boolean pedido = cursor.getCount() > 0;
+        cursor.close();
+        return  pedido;
     }
 }
