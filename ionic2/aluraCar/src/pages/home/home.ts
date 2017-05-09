@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
-
 import { DetailPage } from '../detail/detail';
+import { Carro } from '../../models/carro/Carro';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +10,7 @@ import { DetailPage } from '../detail/detail';
 })
 export class HomePage implements OnInit {
 
-  public carros;
+  public carros: Array<Carro>;
 
   constructor(public navCtrl: NavController,
     public http: Http,
