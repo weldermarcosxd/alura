@@ -11,22 +11,22 @@
   <form (ngSubmit)="finalizar()">
     <ion-item>
       <ion-label stacked>Nome:</ion-label>
-      <ion-input name="nome" [(ngModel)]="nome" ></ion-input>
+      <ion-input name="nome" [(ngModel)]="agendamento.nome" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Endereço:</ion-label>
-      <ion-input name="endereco" [(ngModel)]="endereco" ></ion-input>
+      <ion-input name="endereco" [(ngModel)]="agendamento.endereco" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Email:</ion-label>
-      <ion-input name="email" [(ngModel)]="email" ></ion-input>
+      <ion-input name="email" [(ngModel)]="agendamento.email" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Data:</ion-label>
-      <ion-datetime name="data" [(ngModel)]="data" displayFormat="DD/MM/YYYY"></ion-datetime>
+      <ion-datetime name="data" [(ngModel)]="agendamento.data" displayFormat="DD/MM/YYYY"></ion-datetime>
     </ion-item>
 
     <button ion-button block type="submit">Finalizar</button>
