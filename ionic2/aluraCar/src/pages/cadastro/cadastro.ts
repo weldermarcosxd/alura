@@ -21,7 +21,7 @@ export class CadastroPage implements OnInit{
     public navCtrl: NavController,
     public navParams: NavParams,
     public agendamentoProvider: AgendamentoProvider,
-    public alertController: AlertController) {} 
+    public alertController: AlertController) {}
 
   ngOnInit(){
     this.carro = this.navParams.get('carro');
@@ -46,15 +46,16 @@ export class CadastroPage implements OnInit{
     }
 
     this.agendamentoProvider.agenda(this.agendamento)
-    .then(() => {
-      this._alert.setSubTitle("Agendamento realizado com sucesso!");
+    .then(confirmado => {
+      confirmado ?
+        this._alert.setSubTitle("Agendamento realizado com sucesso!") :
+        this._alert.setSubTitle("Agendamento não pode ser realizado!");
       this._alert.present();
     })
     .catch(err => {
       console.log(err)
-      this._alert.setSubTitle("Agendamento não pode ser realizado!");
+      this._alert.setSubTitle(err.message);
       this._alert.present();
     });
   }
-
 }

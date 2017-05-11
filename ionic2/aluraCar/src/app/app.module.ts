@@ -5,6 +5,7 @@ import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { AgendamentoProvider } from '../providers/agendamento-provider';
+import { AgendamentoDAO } from '../persistence/agendamento/agendamento-dao';
 import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/map';
@@ -37,6 +38,7 @@ function provideStorage(){
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AgendamentoProvider,
+    AgendamentoDAO,
     {provide: Storage, useFactory: provideStorage},
   ]
 })
