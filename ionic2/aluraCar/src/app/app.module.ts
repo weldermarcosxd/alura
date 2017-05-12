@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
 import { CadastroPage } from '../pages/cadastro/cadastro';
+import { AgendamentosPage } from "../pages/agendamentos/agendamentos";
 import { AgendamentoProvider } from '../providers/agendamento-provider';
 import { AgendamentoDAO } from '../persistence/agendamento/agendamento-dao';
 import { Storage } from '@ionic/storage';
@@ -23,7 +24,8 @@ function provideStorage(){
     MyApp,
     HomePage,
     DetailPage,
-    CadastroPage
+    CadastroPage,
+    AgendamentosPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -33,7 +35,8 @@ function provideStorage(){
     MyApp,
     HomePage,
     DetailPage,
-    CadastroPage
+    CadastroPage,
+    AgendamentosPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -3,7 +3,6 @@ import { NavController, NavParams, AlertController, Alert } from 'ionic-angular'
 import { Carro } from '../../models/carro/Carro';
 import { Agendamento } from '../../models/agendamento/Agendamento';
 import { HomePage } from '../home/home';
-import { Http } from '@angular/http';
 import { AgendamentoProvider } from '../../providers/agendamento-provider';
 
 @Component({

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
+import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
 import { HomePage } from '../pages/home/home';
 
 
@@ -11,6 +11,13 @@ import { HomePage } from '../pages/home/home';
 export class MyApp {
   rootPage = HomePage;
 
+  public pages = [
+    {title: "Agendamentos", component: AgendamentosPage}
+    // {title: "Home", component: HomePage}
+  ];
+
+  @ViewChild(Nav) public nav: Nav;
+
   constructor(platform: Platform) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -19,4 +26,9 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
+
+  navigate(pagina){
+    this.nav.push(pagina.component);
+  }
+
 }
