@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+        <ion-avatar item-left *ngIf="url">
+          <img [src]="url">
+        </ion-avatar>
+        {{ currentUser.nome }}
+        <button ion-button outline item-right (click)="tiraFoto()">
+            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+        </button>
+    </ion-item>
+
+    <ion-item>
+      {{ currentUser.dataNascimento }}
+    </ion-item>
+    <ion-item>
+      {{ currentUser.email }}
+    </ion-item>
+    <ion-item>
+      {{ currentUser.telefone }}
+    </ion-item>
+  </ion-card>
+</ion-content>
