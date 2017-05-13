@@ -12,11 +12,20 @@ import { AgendamentoProvider } from '../providers/agendamento-provider';
 import { AgendamentoDAO } from '../persistence/agendamento/agendamento-dao';
 import { Storage } from '@ionic/storage';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { Vibration } from '@ionic-native/vibration';
+import { DatePicker } from '@ionic-native/date-picker';
+import { Camera } from '@ionic-native/camera';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 function provideStorage(){
-  return new Storage(['indexeddb', 'sqlite'], {
+  return new Storage({
     name: 'aluracar',
     storeName: 'agendamentos'
   });
@@ -33,7 +42,9 @@ function provideStorage(){
     PerfilPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    BrowserModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,10 +58,15 @@ function provideStorage(){
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: Storage, useFactory: provideStorage},
     AgendamentoProvider,
     AgendamentoDAO,
     LoginProvider,
-    {provide: Storage, useFactory: provideStorage},
+    SplashScreen,
+    StatusBar,
+    Vibration,
+    DatePicker,
+    Camera
   ]
 })
 export class AppModule {}

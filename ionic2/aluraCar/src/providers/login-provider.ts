@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 import { User } from '../models/user/user';
 import 'rxjs/add/operator/map';
 
+const KEY = 'avatarUrl';
+
 @Injectable()
 export class LoginProvider {
 
@@ -27,5 +29,13 @@ export class LoginProvider {
 
   getCurrentUser(): User{
     return this.currentUser;
+  }
+
+  setAvatar(url){
+    localStorage.setItem(KEY, url);
+  }
+
+  getAvatar(){
+    return localStorage.getItem(KEY);
   }
 }
